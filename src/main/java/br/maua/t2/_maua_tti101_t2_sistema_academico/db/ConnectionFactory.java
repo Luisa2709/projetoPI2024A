@@ -16,7 +16,7 @@ public class ConnectionFactory {
     private String port = "17523";
     private String db = "mydb";
     private String user = "avnadmin";
-    private String password = "AVNS_NSvJq2VI5POBJ-NYZ_Z";
+//    private String password = "AVNS_NSvJq2VI5POBJ-NYZ_Z";
     
     //4 partes: tpo de retorno, nome, lista de parametros, corpo
     public Connection obterConexao(){
