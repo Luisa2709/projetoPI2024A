@@ -62,6 +62,24 @@ public void verificar_estado(){
         initComponents();
     }
 
+    private boolean avaliarSelecionado(int valor){
+        
+        if (selecionado == -1){
+            selecionado = valor;
+            return false;
+        }
+        //este primeiro if está verificando se ele foi selecionado, e apenas ele.
+        else if (valor %4 == selecionado %4 && valor != selecionado){
+            return true;
+        //este if verifica se os dois valores lógicos são iguais(selecionado e valor atual). caso sim, o valor ficará verdadeiro.
+        }
+        else {
+            selecionado = -1;
+            return false;
+        }
+        //se o segundo botão for selecionado errado, ele volta a lógica dos botões para o estado inicial.
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -175,14 +193,12 @@ public void verificar_estado(){
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
         // vermelho
         int valor = 3;
-        if (selecionado == -1)
-            selecionado = valor%4;
-        else if (selecionado != 3 || botao_vermelho )
-            selecionado = -1;
-        else {
+        if (!botao_vermelho && !morango && avaliarSelecionado(valor)){
             botao_vermelho = true;
             morango = true;
             verificar_estado();
+        // ele está verificando se os botões de mesmas cores já foram acertados
+        //se não foram vai se tornar verdadeiro, e deixar o botão como selecionado vizualmente
         }    
     }//GEN-LAST:event_jToggleButton1ActionPerformed
 
@@ -245,15 +261,13 @@ public void verificar_estado(){
     private void jToggleButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton6ActionPerformed
         // morango
         int valor = 7;
-        if (selecionado == -1)
-            selecionado = valor%4;
-        else if (selecionado != 7 || morango )
-            selecionado = -1;
-        else {
+         if (!botao_vermelho && !morango && avaliarSelecionado(valor)){
             botao_vermelho = true;
             morango = true;
             verificar_estado();
-        }      
+        // ele está verificando se os botões de mesmas cores já foram acertados
+        //se não foram vai se tornar verdadeiro, e deixar o botão como selecionado vizualmente
+        } 
     }//GEN-LAST:event_jToggleButton6ActionPerformed
 
     private void jToggleButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton7ActionPerformed

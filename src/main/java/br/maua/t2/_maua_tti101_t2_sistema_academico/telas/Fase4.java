@@ -32,8 +32,8 @@ public void verificar_estado(){
         jToggleButton5.setEnabled(false);
     }
     if (botao_e) {
-        jToggleButton2.setBorder(BorderFactory.createLineBorder(Color.green));
-        jToggleButton2.setEnabled(false);
+        jToggleButton8.setBorder(BorderFactory.createLineBorder(Color.green));
+        jToggleButton8.setEnabled(false);
     }
     if (botao_c) {
         jToggleButton7.setBorder(BorderFactory.createLineBorder(Color.green));
@@ -84,6 +84,10 @@ public void verificar_estado(){
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(255, 255, 255));
+        setMaximumSize(new java.awt.Dimension(610, 480));
+        setMinimumSize(new java.awt.Dimension(610, 480));
+        setResizable(false);
         getContentPane().setLayout(null);
 
         jToggleButton1.setIcon(new javax.swing.ImageIcon("C:\\20241_maua_tti101_t2_sistema_academico\\src\\main\\images\\heart.png")); // NOI18N
@@ -167,8 +171,9 @@ public void verificar_estado(){
         jToggleButton8.setBounds(18, 242, 129, 122);
 
         jLabel1.setIcon(new javax.swing.ImageIcon("C:\\20241_maua_tti101_t2_sistema_academico\\src\\main\\images\\branco fundo.png")); // NOI18N
+        jLabel1.setOpaque(true);
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(-3, -5, 610, 460);
+        jLabel1.setBounds(0, 0, 600, 450);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
