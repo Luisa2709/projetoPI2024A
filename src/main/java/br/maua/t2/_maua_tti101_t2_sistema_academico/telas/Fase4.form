@@ -37,9 +37,6 @@
   <SubComponents>
     <Component class="javax.swing.JToggleButton" name="jToggleButton1">
       <Properties>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\20241_maua_tti101_t2_sistema_academico\src\main\images\heart.png"/>
-        </Property>
         <Property name="text" type="java.lang.String" value="jToggleButton1"/>
       </Properties>
       <Events>
@@ -53,9 +50,6 @@
     </Component>
     <Component class="javax.swing.JToggleButton" name="jToggleButton2">
       <Properties>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\20241_maua_tti101_t2_sistema_academico\src\main\images\ma&#xe7;&#xe7;.png"/>
-        </Property>
         <Property name="text" type="java.lang.String" value="jToggleButton1"/>
       </Properties>
       <Events>
@@ -69,9 +63,6 @@
     </Component>
     <Component class="javax.swing.JToggleButton" name="jToggleButton3">
       <Properties>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\20241_maua_tti101_t2_sistema_academico\src\main\images\ele.png"/>
-        </Property>
         <Property name="text" type="java.lang.String" value="jToggleButton1"/>
       </Properties>
       <Events>
@@ -85,9 +76,6 @@
     </Component>
     <Component class="javax.swing.JToggleButton" name="jToggleButton4">
       <Properties>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\20241_maua_tti101_t2_sistema_academico\src\main\images\cat.png"/>
-        </Property>
         <Property name="text" type="java.lang.String" value="jToggleButton1"/>
       </Properties>
       <Events>
@@ -101,9 +89,6 @@
     </Component>
     <Component class="javax.swing.JToggleButton" name="jToggleButton5">
       <Properties>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\20241_maua_tti101_t2_sistema_academico\src\main\images\mmm.png"/>
-        </Property>
         <Property name="text" type="java.lang.String" value="jToggleButton1"/>
       </Properties>
       <Events>
@@ -117,9 +102,6 @@
     </Component>
     <Component class="javax.swing.JToggleButton" name="jToggleButton6">
       <Properties>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\20241_maua_tti101_t2_sistema_academico\src\main\images\ggg.png"/>
-        </Property>
         <Property name="text" type="java.lang.String" value="jToggleButton1"/>
       </Properties>
       <Events>
@@ -133,9 +115,6 @@
     </Component>
     <Component class="javax.swing.JToggleButton" name="jToggleButton7">
       <Properties>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\20241_maua_tti101_t2_sistema_academico\src\main\images\ccc.png"/>
-        </Property>
         <Property name="text" type="java.lang.String" value="jToggleButton1"/>
       </Properties>
       <Events>
@@ -149,9 +128,6 @@
     </Component>
     <Component class="javax.swing.JToggleButton" name="jToggleButton8">
       <Properties>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\20241_maua_tti101_t2_sistema_academico\src\main\images\eee.png"/>
-        </Property>
         <Property name="text" type="java.lang.String" value="jToggleButton1"/>
       </Properties>
       <Events>
@@ -165,9 +141,6 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\20241_maua_tti101_t2_sistema_academico\src\main\images\branco fundo.png"/>
-        </Property>
         <Property name="opaque" type="boolean" value="true"/>
       </Properties>
       <Constraints>

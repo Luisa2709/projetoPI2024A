@@ -27,9 +27,6 @@
   <SubComponents>
     <Component class="javax.swing.JToggleButton" name="jToggleButton1">
       <Properties>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\20241_maua_tti101_t2_sistema_academico\src\main\images\f33.png"/>
-        </Property>
         <Property name="text" type="java.lang.String" value="jToggleButton1"/>
       </Properties>
       <Events>
@@ -43,9 +40,6 @@
     </Component>
     <Component class="javax.swing.JToggleButton" name="jToggleButton2">
       <Properties>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\20241_maua_tti101_t2_sistema_academico\src\main\images\f3.png"/>
-        </Property>
         <Property name="text" type="java.lang.String" value="jToggleButton1"/>
       </Properties>
       <Events>
@@ -59,9 +53,6 @@
     </Component>
     <Component class="javax.swing.JToggleButton" name="jToggleButton3">
       <Properties>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\20241_maua_tti101_t2_sistema_academico\src\main\images\f2.png"/>
-        </Property>
         <Property name="text" type="java.lang.String" value="jToggleButton1"/>
       </Properties>
       <Events>
@@ -75,9 +66,6 @@
     </Component>
     <Component class="javax.swing.JToggleButton" name="jToggleButton4">
       <Properties>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\20241_maua_tti101_t2_sistema_academico\src\main\images\f1.png"/>
-        </Property>
         <Property name="text" type="java.lang.String" value="jToggleButton1"/>
       </Properties>
       <Events>
@@ -91,9 +79,6 @@
     </Component>
     <Component class="javax.swing.JToggleButton" name="jToggleButton6">
       <Properties>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\20241_maua_tti101_t2_sistema_academico\src\main\images\f11.png"/>
-        </Property>
         <Property name="text" type="java.lang.String" value="jToggleButton1"/>
       </Properties>
       <Events>
@@ -107,9 +92,6 @@
     </Component>
     <Component class="javax.swing.JToggleButton" name="jToggleButton7">
       <Properties>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\20241_maua_tti101_t2_sistema_academico\src\main\images\f22.png"/>
-        </Property>
         <Property name="text" type="java.lang.String" value="jToggleButton1"/>
       </Properties>
       <Events>
@@ -123,9 +105,6 @@
     </Component>
     <Component class="javax.swing.JToggleButton" name="jToggleButton8">
       <Properties>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\20241_maua_tti101_t2_sistema_academico\src\main\images\f44.png"/>
-        </Property>
         <Property name="text" type="java.lang.String" value="jToggleButton1"/>
       </Properties>
       <Events>
@@ -139,9 +118,6 @@
     </Component>
     <Component class="javax.swing.JToggleButton" name="jToggleButton9">
       <Properties>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\20241_maua_tti101_t2_sistema_academico\src\main\images\f4.png"/>
-        </Property>
         <Property name="text" type="java.lang.String" value="jToggleButton1"/>
       </Properties>
       <Events>
@@ -154,11 +130,6 @@
       </Constraints>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel1">
-      <Properties>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\20241_maua_tti101_t2_sistema_academico\src\main\images\branco fundo.png"/>
-        </Property>
-      </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
           <AbsoluteConstraints x="0" y="0" width="600" height="500"/>

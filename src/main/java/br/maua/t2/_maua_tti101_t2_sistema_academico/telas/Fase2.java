@@ -61,6 +61,24 @@ public void verificar_estado(){
     public Fase2() {
         initComponents();
     }
+    
+    private boolean avaliarSelecionado(int valor){
+        
+        if (selecionado == -1){
+            selecionado = valor;
+            return false;
+        }
+        //este primeiro if está verificando se ele foi selecionado, e apenas ele.
+        else if (valor %4 == selecionado %4 && valor != selecionado){
+            return true;
+        //este if verifica se os dois valores lógicos são iguais(selecionado e valor atual). caso sim, o valor ficará verdadeiro.
+        }
+        else {
+            selecionado = -1;
+            return false;
+        }
+        //se o segundo botão for selecionado errado, ele volta a lógica dos botões para o estado inicial.
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -174,11 +192,7 @@ public void verificar_estado(){
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
         //três livros
         int valor = 6;
-        if (selecionado == -1)
-            selecionado = valor%4;
-        else if (selecionado != 6 || tres_livros )
-            selecionado = -1;
-        else {
+        if (!tres_livros && !botao_tres && avaliarSelecionado(valor)){
             tres_livros = true;
             botao_tres = true;
             verificar_estado();
@@ -188,25 +202,17 @@ public void verificar_estado(){
     private void jToggleButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton2ActionPerformed
         //três
         int valor = 2;
-        if (selecionado == -1)
-            selecionado = valor%4;
-        else if (selecionado != 2 || botao_tres)
-            selecionado = -1;
-        else {
-            botao_tres = true;
+        if (!tres_livros && !botao_tres && avaliarSelecionado(valor)){
             tres_livros = true;
+            botao_tres = true;
             verificar_estado();
         }
     }//GEN-LAST:event_jToggleButton2ActionPerformed
 
     private void jToggleButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton3ActionPerformed
         //dois
-        int valor = 1;
-        if (selecionado == -1)
-            selecionado = valor%4;
-        else if (selecionado != 1 || botao_dois )
-            selecionado = -1;
-        else {
+         int valor = 1;
+        if (!botao_dois && !dois_lapis && avaliarSelecionado(valor)){
             botao_dois = true;
             dois_lapis = true;
             verificar_estado();
@@ -216,11 +222,7 @@ public void verificar_estado(){
     private void jToggleButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton4ActionPerformed
         //um
         int valor = 0;
-        if (selecionado == -1)
-            selecionado = valor%4;
-        else if (selecionado != 0 || botao_um )
-            selecionado = -1;
-        else {
+        if (!botao_um && !uma_mochila && avaliarSelecionado(valor)){
             botao_um = true;
             uma_mochila = true;
             verificar_estado();
@@ -230,13 +232,9 @@ public void verificar_estado(){
     private void jToggleButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton6ActionPerformed
         //uma mochila
         int valor = 4;
-        if (selecionado == -1)
-            selecionado = valor%4;
-        else if (selecionado != 4 || uma_mochila)
-            selecionado = -1;
-        else {
-            uma_mochila = true;
+        if (!botao_um && !uma_mochila && avaliarSelecionado(valor)){
             botao_um = true;
+            uma_mochila = true;
             verificar_estado();
         }
     }//GEN-LAST:event_jToggleButton6ActionPerformed
@@ -244,13 +242,9 @@ public void verificar_estado(){
     private void jToggleButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton7ActionPerformed
         //dois lápis
         int valor = 5;
-        if (selecionado == -1)
-            selecionado = valor%4;
-        else if (selecionado != 5 || dois_lapis)
-            selecionado = -1;
-        else {
-            dois_lapis = true;
+        if (!botao_dois && !dois_lapis && avaliarSelecionado(valor)){
             botao_dois = true;
+            dois_lapis = true;
             verificar_estado();
         }
     }//GEN-LAST:event_jToggleButton7ActionPerformed
@@ -258,13 +252,9 @@ public void verificar_estado(){
     private void jToggleButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton8ActionPerformed
         //quatro borrachas
         int valor = 7;
-        if (selecionado == -1)
-            selecionado = valor%4;
-        else if (selecionado != 7 || quatro_borrachas )
-            selecionado = -1;
-        else {
-            quatro_borrachas = true;
+        if (!botao_quatro && !quatro_borrachas && avaliarSelecionado(valor)){
             botao_quatro = true;
+            quatro_borrachas = true;
             verificar_estado();
         }
     }//GEN-LAST:event_jToggleButton8ActionPerformed
@@ -272,11 +262,7 @@ public void verificar_estado(){
     private void jToggleButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton9ActionPerformed
         //quatro
         int valor = 3;
-        if (selecionado == -1)
-            selecionado = valor%4;
-        else if (selecionado != 3 || botao_quatro)
-            selecionado = -1;
-        else {
+        if (!botao_quatro && !quatro_borrachas && avaliarSelecionado(valor)){
             botao_quatro = true;
             quatro_borrachas = true;
             verificar_estado();

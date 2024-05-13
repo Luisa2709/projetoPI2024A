@@ -103,7 +103,6 @@ public void verificar_estado(){
         setPreferredSize(new java.awt.Dimension(600, 450));
         getContentPane().setLayout(null);
 
-        jToggleButton1.setIcon(new javax.swing.ImageIcon("C:\\20241_maua_tti101_t2_sistema_academico\\src\\main\\images\\vermelho.png")); // NOI18N
         jToggleButton1.setText("jToggleButton1");
         jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -113,7 +112,6 @@ public void verificar_estado(){
         getContentPane().add(jToggleButton1);
         jToggleButton1.setBounds(450, 70, 129, 122);
 
-        jToggleButton2.setIcon(new javax.swing.ImageIcon("C:\\20241_maua_tti101_t2_sistema_academico\\src\\main\\images\\verde.png")); // NOI18N
         jToggleButton2.setText("jToggleButton1");
         jToggleButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -123,7 +121,6 @@ public void verificar_estado(){
         getContentPane().add(jToggleButton2);
         jToggleButton2.setBounds(310, 70, 129, 122);
 
-        jToggleButton3.setIcon(new javax.swing.ImageIcon("C:\\20241_maua_tti101_t2_sistema_academico\\src\\main\\images\\azul.png")); // NOI18N
         jToggleButton3.setText("jToggleButton1");
         jToggleButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -133,7 +130,6 @@ public void verificar_estado(){
         getContentPane().add(jToggleButton3);
         jToggleButton3.setBounds(170, 70, 129, 122);
 
-        jToggleButton4.setIcon(new javax.swing.ImageIcon("C:\\20241_maua_tti101_t2_sistema_academico\\src\\main\\images\\amarelo.png")); // NOI18N
         jToggleButton4.setText("jToggleButton1");
         jToggleButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -143,7 +139,6 @@ public void verificar_estado(){
         getContentPane().add(jToggleButton4);
         jToggleButton4.setBounds(30, 70, 129, 122);
 
-        jToggleButton5.setIcon(new javax.swing.ImageIcon("C:\\20241_maua_tti101_t2_sistema_academico\\src\\main\\images\\p2.png")); // NOI18N
         jToggleButton5.setText("jToggleButton1");
         jToggleButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -153,7 +148,6 @@ public void verificar_estado(){
         getContentPane().add(jToggleButton5);
         jToggleButton5.setBounds(30, 220, 129, 122);
 
-        jToggleButton6.setIcon(new javax.swing.ImageIcon("C:\\20241_maua_tti101_t2_sistema_academico\\src\\main\\images\\m2.png")); // NOI18N
         jToggleButton6.setText("jToggleButton1");
         jToggleButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -163,7 +157,6 @@ public void verificar_estado(){
         getContentPane().add(jToggleButton6);
         jToggleButton6.setBounds(170, 220, 129, 122);
 
-        jToggleButton7.setIcon(new javax.swing.ImageIcon("C:\\20241_maua_tti101_t2_sistema_academico\\src\\main\\images\\nuuuuu.png")); // NOI18N
         jToggleButton7.setText("jToggleButton1");
         jToggleButton7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -173,7 +166,6 @@ public void verificar_estado(){
         getContentPane().add(jToggleButton7);
         jToggleButton7.setBounds(310, 220, 129, 122);
 
-        jToggleButton8.setIcon(new javax.swing.ImageIcon("C:\\20241_maua_tti101_t2_sistema_academico\\src\\main\\images\\banana3.png")); // NOI18N
         jToggleButton8.setText("jToggleButton1");
         jToggleButton8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -182,8 +174,6 @@ public void verificar_estado(){
         });
         getContentPane().add(jToggleButton8);
         jToggleButton8.setBounds(450, 220, 129, 122);
-
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\20241_maua_tti101_t2_sistema_academico\\src\\main\\images\\branco fundo.png")); // NOI18N
         getContentPane().add(jLabel1);
         jLabel1.setBounds(0, 0, 600, 460);
 

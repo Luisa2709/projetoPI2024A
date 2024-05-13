@@ -63,6 +63,24 @@ public void verificar_estado(){
     public Fase4() {
         initComponents();
     }
+    
+    private boolean avaliarSelecionado(int valor){
+        
+        if (selecionado == -1){
+            selecionado = valor;
+            return false;
+        }
+        //este primeiro if está verificando se ele foi selecionado, e apenas ele.
+        else if (valor %4 == selecionado %4 && valor != selecionado){
+            return true;
+        //este if verifica se os dois valores lógicos são iguais(selecionado e valor atual). caso sim, o valor ficará verdadeiro.
+        }
+        else {
+            selecionado = -1;
+            return false;
+        }
+        //se o segundo botão for selecionado errado, ele volta a lógica dos botões para o estado inicial.
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -90,7 +108,6 @@ public void verificar_estado(){
         setResizable(false);
         getContentPane().setLayout(null);
 
-        jToggleButton1.setIcon(new javax.swing.ImageIcon("C:\\20241_maua_tti101_t2_sistema_academico\\src\\main\\images\\heart.png")); // NOI18N
         jToggleButton1.setText("jToggleButton1");
         jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -100,7 +117,6 @@ public void verificar_estado(){
         getContentPane().add(jToggleButton1);
         jToggleButton1.setBounds(453, 75, 129, 122);
 
-        jToggleButton2.setIcon(new javax.swing.ImageIcon("C:\\20241_maua_tti101_t2_sistema_academico\\src\\main\\images\\maçç.png")); // NOI18N
         jToggleButton2.setText("jToggleButton1");
         jToggleButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -110,7 +126,6 @@ public void verificar_estado(){
         getContentPane().add(jToggleButton2);
         jToggleButton2.setBounds(306, 75, 129, 122);
 
-        jToggleButton3.setIcon(new javax.swing.ImageIcon("C:\\20241_maua_tti101_t2_sistema_academico\\src\\main\\images\\ele.png")); // NOI18N
         jToggleButton3.setText("jToggleButton1");
         jToggleButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -120,7 +135,6 @@ public void verificar_estado(){
         getContentPane().add(jToggleButton3);
         jToggleButton3.setBounds(159, 75, 129, 122);
 
-        jToggleButton4.setIcon(new javax.swing.ImageIcon("C:\\20241_maua_tti101_t2_sistema_academico\\src\\main\\images\\cat.png")); // NOI18N
         jToggleButton4.setText("jToggleButton1");
         jToggleButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -130,7 +144,6 @@ public void verificar_estado(){
         getContentPane().add(jToggleButton4);
         jToggleButton4.setBounds(18, 74, 129, 123);
 
-        jToggleButton5.setIcon(new javax.swing.ImageIcon("C:\\20241_maua_tti101_t2_sistema_academico\\src\\main\\images\\mmm.png")); // NOI18N
         jToggleButton5.setText("jToggleButton1");
         jToggleButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -140,7 +153,6 @@ public void verificar_estado(){
         getContentPane().add(jToggleButton5);
         jToggleButton5.setBounds(455, 242, 129, 122);
 
-        jToggleButton6.setIcon(new javax.swing.ImageIcon("C:\\20241_maua_tti101_t2_sistema_academico\\src\\main\\images\\ggg.png")); // NOI18N
         jToggleButton6.setText("jToggleButton1");
         jToggleButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -150,7 +162,6 @@ public void verificar_estado(){
         getContentPane().add(jToggleButton6);
         jToggleButton6.setBounds(308, 242, 129, 122);
 
-        jToggleButton7.setIcon(new javax.swing.ImageIcon("C:\\20241_maua_tti101_t2_sistema_academico\\src\\main\\images\\ccc.png")); // NOI18N
         jToggleButton7.setText("jToggleButton1");
         jToggleButton7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -160,7 +171,6 @@ public void verificar_estado(){
         getContentPane().add(jToggleButton7);
         jToggleButton7.setBounds(159, 242, 129, 122);
 
-        jToggleButton8.setIcon(new javax.swing.ImageIcon("C:\\20241_maua_tti101_t2_sistema_academico\\src\\main\\images\\eee.png")); // NOI18N
         jToggleButton8.setText("jToggleButton1");
         jToggleButton8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -170,7 +180,6 @@ public void verificar_estado(){
         getContentPane().add(jToggleButton8);
         jToggleButton8.setBounds(18, 242, 129, 122);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\20241_maua_tti101_t2_sistema_academico\\src\\main\\images\\branco fundo.png")); // NOI18N
         jLabel1.setOpaque(true);
         getContentPane().add(jLabel1);
         jLabel1.setBounds(0, 0, 600, 450);
@@ -181,11 +190,7 @@ public void verificar_estado(){
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
         //coracao
         int valor = 3;
-        if (selecionado == -1)
-            selecionado = valor%4;
-        else if (selecionado != 3|| coracao )
-            selecionado = -1;
-        else {
+        if (!coracao && !botao_c && avaliarSelecionado(valor)){
             coracao = true;
             botao_c = true;
             verificar_estado();
@@ -195,11 +200,7 @@ public void verificar_estado(){
     private void jToggleButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton2ActionPerformed
         //maca
         int valor = 2;
-        if (selecionado == -1)
-            selecionado = valor%4;
-        else if (selecionado != 2|| maca )
-            selecionado = -1;
-        else {
+        if (!maca && !botao_m && avaliarSelecionado(valor)){
             maca = true;
             botao_m = true;
             verificar_estado();
@@ -209,25 +210,17 @@ public void verificar_estado(){
     private void jToggleButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton3ActionPerformed
         // elefante
         int valor = 1;
-        if (selecionado == -1)
-            selecionado = valor%4;
-        else if (selecionado != 1 || elefante )
-            selecionado = -1;
-        else {
+        if (!elefante && !botao_e && avaliarSelecionado(valor)){
             elefante = true;
             botao_e = true;
-            verificar_estado();
+            verificar_estado();       
         }    
     }//GEN-LAST:event_jToggleButton3ActionPerformed
 
     private void jToggleButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton4ActionPerformed
         // gato
         int valor = 0;
-        if (selecionado == -1)
-            selecionado = valor%4;
-        else if (selecionado != 0 || gato)
-            selecionado = -1;
-        else {
+        if (!gato && !botao_g && avaliarSelecionado(valor)){
             gato = true;
             botao_g = true;
             verificar_estado();
@@ -237,13 +230,9 @@ public void verificar_estado(){
     private void jToggleButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton5ActionPerformed
         //m
         int valor = 6;
-        if (selecionado == -1)
-            selecionado = valor%4;
-        else if (selecionado != 6|| botao_m )
-            selecionado = -1;
-        else {
-            botao_m = true;
+        if (!maca && !botao_m && avaliarSelecionado(valor)){
             maca = true;
+            botao_m = true;
             verificar_estado();
         }                        
     }//GEN-LAST:event_jToggleButton5ActionPerformed
@@ -251,13 +240,9 @@ public void verificar_estado(){
     private void jToggleButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton6ActionPerformed
         //g
         int valor = 4;
-        if (selecionado == -1)
-            selecionado = valor%4;
-        else if (selecionado != 4|| botao_g )
-            selecionado = -1;
-        else {
-            botao_g = true;
+        if (!gato && !botao_g && avaliarSelecionado(valor)){
             gato = true;
+            botao_g = true;
             verificar_estado();
         }                        
     }//GEN-LAST:event_jToggleButton6ActionPerformed
@@ -265,13 +250,9 @@ public void verificar_estado(){
     private void jToggleButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton7ActionPerformed
         //c
         int valor = 7;
-        if (selecionado == -1)
-            selecionado = valor%4;
-        else if (selecionado != 7|| botao_c )
-            selecionado = -1;
-        else {
-            botao_c = true;
+        if (!coracao && !botao_c && avaliarSelecionado(valor)){
             coracao = true;
+            botao_c = true;
             verificar_estado();
         }                        
     }//GEN-LAST:event_jToggleButton7ActionPerformed
@@ -279,13 +260,9 @@ public void verificar_estado(){
     private void jToggleButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton8ActionPerformed
         //e
         int valor = 5;
-        if (selecionado == -1)
-            selecionado = valor%4;
-        else if (selecionado != 5|| botao_e )
-            selecionado = -1;
-        else {
-            botao_e = true;
+        if (!elefante && !botao_e && avaliarSelecionado(valor)){
             elefante = true;
+            botao_e = true;
             verificar_estado();
         }                        
     }//GEN-LAST:event_jToggleButton8ActionPerformed
