@@ -195,11 +195,7 @@ public void verificar_estado(){
     private void jToggleButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton2ActionPerformed
         // verde
         int valor = 2;
-        if (selecionado == -1)
-            selecionado = valor%4;
-        else if (selecionado != 2 || botao_verde )
-            selecionado = -1;
-        else {
+        if (!botao_verde && !planta && avaliarSelecionado(valor)){
             botao_verde = true;
             planta = true;
             verificar_estado();
@@ -209,11 +205,7 @@ public void verificar_estado(){
     private void jToggleButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton3ActionPerformed
         // azul
         int valor = 1;
-        if (selecionado == -1)
-            selecionado = valor%4;
-        else if (selecionado != 1 || botao_azul )
-            selecionado = -1;
-        else {
+        if (!botao_azul && !nuvem && avaliarSelecionado(valor)){
             botao_azul = true;
             nuvem = true;
             verificar_estado();
@@ -223,11 +215,7 @@ public void verificar_estado(){
     private void jToggleButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton4ActionPerformed
         //amarelo
         int valor = 0;
-        if (selecionado == -1)
-            selecionado = valor%4;
-        else if (selecionado != 0 || botao_amarelo )
-            selecionado = -1;
-        else {
+        if (!botao_amarelo && !banana && avaliarSelecionado(valor)){
             botao_amarelo = true;
             banana = true;
             verificar_estado();
@@ -237,13 +225,9 @@ public void verificar_estado(){
     private void jToggleButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton5ActionPerformed
         // planta verde
         int valor = 6;
-        if (selecionado == -1)
-            selecionado = valor%4;
-        else if (selecionado != 6 || planta )
-            selecionado = -1;
-        else {
-            botao_verde = true;
-            planta = true;
+        if (!botao_vermelho && !morango && avaliarSelecionado(valor)){
+            botao_vermelho = true;
+            morango = true;
             verificar_estado();
         }                    
     }//GEN-LAST:event_jToggleButton5ActionPerformed
@@ -263,11 +247,7 @@ public void verificar_estado(){
     private void jToggleButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton7ActionPerformed
         //nuvem
         int valor = 5;
-        if (selecionado == -1)
-            selecionado = valor%4;
-        else if (selecionado != 5 || nuvem )
-            selecionado = -1;
-        else {
+        if (!botao_azul && !nuvem && avaliarSelecionado(valor)){
             botao_azul = true;
             nuvem = true;
             verificar_estado();
@@ -277,11 +257,7 @@ public void verificar_estado(){
     private void jToggleButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton8ActionPerformed
         //banana
         int valor = 4;
-        if (selecionado == -1)
-            selecionado = valor%4;
-        else if (selecionado != 4 || banana )
-            selecionado = -1;
-        else {
+        if (!botao_amarelo && !banana && avaliarSelecionado(valor)){
             botao_amarelo = true;
             banana = true;
             verificar_estado();
