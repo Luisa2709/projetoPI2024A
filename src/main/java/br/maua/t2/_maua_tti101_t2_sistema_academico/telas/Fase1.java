@@ -100,7 +100,6 @@ public void verificar_estado(){
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(600, 450));
         getContentPane().setLayout(null);
 
         jToggleButton1.setText("jToggleButton1");
@@ -130,6 +129,7 @@ public void verificar_estado(){
         getContentPane().add(jToggleButton3);
         jToggleButton3.setBounds(170, 70, 129, 122);
 
+        jToggleButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/maua/t2/_maua_tti101_t2_sistema_academico/telas/vermelho.png"))); // NOI18N
         jToggleButton4.setText("jToggleButton1");
         jToggleButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
