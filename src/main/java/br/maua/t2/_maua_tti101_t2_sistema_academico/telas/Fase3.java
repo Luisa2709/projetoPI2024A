@@ -60,8 +60,25 @@ public void verificar_estado(){
      * Creates new form Fase3
      */
     public Fase3(){
-        initComponents();
+        initComponents();       
 }
+    private boolean avaliarSelecionado(int valor){
+        
+        if (selecionado == -1){
+            selecionado = valor;
+            return false;
+        }
+        //este primeiro if está verificando se ele foi selecionado, e apenas ele.
+        else if (valor %4 == selecionado %4 && valor != selecionado){
+            return true;
+        //este if verifica se os dois valores lógicos são iguais(selecionado e valor atual). caso sim, o valor ficará verdadeiro.
+        }
+        else {
+            selecionado = -1;
+            return false;
+        }
+        //se o segundo botão for selecionado errado, ele volta a lógica dos botões para o estado inicial.
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -175,11 +192,7 @@ public void verificar_estado(){
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
         //macaco
         int valor = 3;
-        if (selecionado == -1)
-            selecionado = valor%4;
-        else if (selecionado != 3|| macaco )
-            selecionado = -1;
-        else {
+        if (!macaco && !floresta && avaliarSelecionado(valor)){
             macaco = true;
             floresta = true;
             verificar_estado();
@@ -189,11 +202,7 @@ public void verificar_estado(){
     private void jToggleButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton2ActionPerformed
         //leao
         int valor = 2;
-        if (selecionado == -1)
-            selecionado = valor%4;
-        else if (selecionado != 2 || leao )
-            selecionado = -1;
-        else {
+        if (!leao && !selva && avaliarSelecionado(valor)){
             leao = true;
             selva = true;
             verificar_estado();
@@ -203,13 +212,9 @@ public void verificar_estado(){
     private void jToggleButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton3ActionPerformed
         //selva
         int valor = 6;
-        if (selecionado == -1)
-            selecionado = valor%4;
-        else if (selecionado != 6 || selva)
-            selecionado = -1;
-        else {
-            selva = true;
+        if (!leao && !selva && avaliarSelecionado(valor)){
             leao = true;
+            selva = true;
             verificar_estado();
         }                         
     }//GEN-LAST:event_jToggleButton3ActionPerformed
@@ -217,41 +222,29 @@ public void verificar_estado(){
     private void jToggleButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton4ActionPerformed
         //peixe
         int valor = 0;
-        if (selecionado == -1)
-            selecionado = valor%4;
-        else if (selecionado != 0 || peixe )
-            selecionado = -1;
-        else {
+        if (!peixe && !mar && avaliarSelecionado(valor)){
             peixe = true;
             mar = true;
-            verificar_estado();
+            verificar_estado();       
         }                      
     }//GEN-LAST:event_jToggleButton4ActionPerformed
 
     private void jToggleButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton5ActionPerformed
         //colmeia
         int valor = 5;
-        if (selecionado == -1)
-            selecionado = valor%4;
-        else if (selecionado != 5 || colmeia )
-            selecionado = -1;
-        else {
+        if (!colmeia && !abelha && avaliarSelecionado(valor)){
             colmeia = true;
             abelha = true;
-            verificar_estado();
+            verificar_estado(); 
         }                         
     }//GEN-LAST:event_jToggleButton5ActionPerformed
 
     private void jToggleButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton6ActionPerformed
         //floresta
         int valor = 7;
-        if (selecionado == -1)
-            selecionado = valor%4;
-        else if (selecionado != 7 || floresta )
-            selecionado = -1;
-        else {
-            floresta = true;
+        if (!macaco && !floresta && avaliarSelecionado(valor)){
             macaco = true;
+            floresta = true;
             verificar_estado();
         }                          
     }//GEN-LAST:event_jToggleButton6ActionPerformed
@@ -259,27 +252,19 @@ public void verificar_estado(){
     private void jToggleButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton7ActionPerformed
         //mar
         int valor = 4;
-        if (selecionado == -1)
-            selecionado = valor%4;
-        else if (selecionado != 4 || mar )
-            selecionado = -1;
-        else {
-            mar = true;
+        if (!peixe && !mar && avaliarSelecionado(valor)){
             peixe = true;
-            verificar_estado();
+            mar = true;
+            verificar_estado(); 
         }                         
     }//GEN-LAST:event_jToggleButton7ActionPerformed
 
     private void jToggleButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton10ActionPerformed
         //abelha
         int valor = 1;
-        if (selecionado == -1)
-            selecionado = valor%4;
-        else if (selecionado != 1 || abelha )
-            selecionado = -1;
-        else {
-            abelha = true;
+        if (!colmeia && !abelha && avaliarSelecionado(valor)){
             colmeia = true;
+            abelha = true;
             verificar_estado();
         }
     }//GEN-LAST:event_jToggleButton10ActionPerformed
