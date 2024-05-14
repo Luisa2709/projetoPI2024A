@@ -181,6 +181,8 @@ public void verificar_estado(){
         });
         getContentPane().add(jToggleButton8);
         jToggleButton8.setBounds(450, 220, 129, 122);
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/maua/t2/_maua_tti101_t2_sistema_academico/telas/imagens/branco fundo.png"))); // NOI18N
         getContentPane().add(jLabel1);
         jLabel1.setBounds(0, 0, 600, 460);
 

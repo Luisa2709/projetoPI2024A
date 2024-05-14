@@ -165,6 +165,9 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/br/maua/t2/_maua_tti101_t2_sistema_academico/telas/imagens/branco fundo.png"/>
+        </Property>
         <Property name="opaque" type="boolean" value="true"/>
       </Properties>
       <Constraints>
