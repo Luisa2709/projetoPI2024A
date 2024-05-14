@@ -36,12 +36,12 @@ public class LoginTela extends javax.swing.JFrame {
         convidadoButton = new javax.swing.JButton();
         okButton = new javax.swing.JButton();
         cadastrarButton1 = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("LoginTela");
@@ -56,7 +56,7 @@ public class LoginTela extends javax.swing.JFrame {
             }
         });
         getContentPane().add(loginTextField);
-        loginTextField.setBounds(20, 20, 439, 70);
+        loginTextField.setBounds(20, 20, 560, 70);
 
         senhaPasswordField.setForeground(new java.awt.Color(0, 142, 246));
         senhaPasswordField.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1), "Digite sua senha:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 12))); // NOI18N
@@ -66,7 +66,7 @@ public class LoginTela extends javax.swing.JFrame {
             }
         });
         getContentPane().add(senhaPasswordField);
-        senhaPasswordField.setBounds(20, 100, 439, 70);
+        senhaPasswordField.setBounds(20, 100, 560, 70);
 
         convidadoButton.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         convidadoButton.setText("Convidado");
@@ -76,7 +76,7 @@ public class LoginTela extends javax.swing.JFrame {
             }
         });
         getContentPane().add(convidadoButton);
-        convidadoButton.setBounds(190, 360, 226, 54);
+        convidadoButton.setBounds(300, 300, 270, 80);
 
         okButton.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         okButton.setText("OK");
@@ -86,7 +86,7 @@ public class LoginTela extends javax.swing.JFrame {
             }
         });
         getContentPane().add(okButton);
-        okButton.setBounds(210, 200, 184, 60);
+        okButton.setBounds(210, 200, 190, 70);
 
         cadastrarButton1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         cadastrarButton1.setText("Não tem login: Criar conta");
@@ -96,33 +96,32 @@ public class LoginTela extends javax.swing.JFrame {
             }
         });
         getContentPane().add(cadastrarButton1);
-        cadastrarButton1.setBounds(190, 290, 226, 54);
-
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\20241_maua_tti101_t2_sistema_academico\\src\\main\\images\\Captura de tela 2024-04-24 175310.png")); // NOI18N
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(20, 260, 160, 180);
+        cadastrarButton1.setBounds(20, 300, 260, 80);
 
         jLabel4.setIcon(new javax.swing.ImageIcon("C:\\20241_maua_tti101_t2_sistema_academico\\src\\main\\images\\estrelas.png")); // NOI18N
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(-20, 40, 300, 210);
+        jLabel4.setBounds(440, 260, 300, 210);
 
-        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\20241_maua_tti101_t2_sistema_academico\\src\\main\\images\\Captura de tela 2024-04-24 180429.png")); // NOI18N
-        getContentPane().add(jLabel3);
-        jLabel3.setBounds(430, 190, 210, 230);
-
-        jLabel5.setIcon(new javax.swing.ImageIcon("C:\\20241_maua_tti101_t2_sistema_academico\\src\\main\\images\\Imagem2.png")); // NOI18N
+        jLabel5.setIcon(new javax.swing.ImageIcon("C:\\20241_maua_tti101_t2_sistema_academico\\src\\main\\images\\estrelas.png")); // NOI18N
         getContentPane().add(jLabel5);
-        jLabel5.setBounds(470, 10, 190, 190);
+        jLabel5.setBounds(70, -80, 300, 210);
 
         jLabel6.setIcon(new javax.swing.ImageIcon("C:\\20241_maua_tti101_t2_sistema_academico\\src\\main\\images\\estrelas.png")); // NOI18N
         getContentPane().add(jLabel6);
-        jLabel6.setBounds(0, -70, 270, 200);
+        jLabel6.setBounds(-10, 30, 410, 270);
+
+        jLabel7.setIcon(new javax.swing.ImageIcon("C:\\20241_maua_tti101_t2_sistema_academico\\src\\main\\images\\estrelas.png")); // NOI18N
+        getContentPane().add(jLabel7);
+        jLabel7.setBounds(-20, -40, 270, 200);
 
         jLabel1.setIcon(new javax.swing.ImageIcon("C:\\20241_maua_tti101_t2_sistema_academico\\src\\main\\images\\image-1614231140gab.jpg")); // NOI18N
         jLabel1.setName(""); // NOI18N
         getContentPane().add(jLabel1);
         jLabel1.setBounds(0, 0, 610, 460);
         jLabel1.getAccessibleContext().setAccessibleName("");
+
+        getContentPane().add(jPanel1);
+        jPanel1.setBounds(410, 190, 100, 100);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -143,9 +142,16 @@ public class LoginTela extends javax.swing.JFrame {
         usuario.setLogin(login);
         usuario.setSenha(senha);
         var dao = new UsuarioDAO();
-        if(dao.existe(usuario)){
-        dispose();
-        new TelaFasess().setVisible(true);
+        if(dao.existe(usuario)){//verifica se existe o usuario
+            if (dao.verificaProfessor(usuario)){
+                dispose();
+                new PontuacaoProfessor().setVisible(true);
+            } 
+            else{
+                dispose();
+                new TelaFasess().setVisible(true);
+            }
+        
         }
         else{
         JOptionPane.showMessageDialog(null, "Este usuário não existe");       
@@ -226,11 +232,11 @@ public class LoginTela extends javax.swing.JFrame {
     private javax.swing.JButton cadastrarButton1;
     private javax.swing.JButton convidadoButton;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField loginTextField;
     private javax.swing.JButton okButton;
     private javax.swing.JPasswordField senhaPasswordField;

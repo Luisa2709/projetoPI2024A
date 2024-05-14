@@ -102,7 +102,7 @@ public void verificar_estado(){
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
 
-        jToggleButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/maua/t2/_maua_tti101_t2_sistema_academico/telas/treslivros.png"))); // NOI18N
+        jToggleButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/maua/t2/_maua_tti101_t2_sistema_academico/telas/imagens/treslivros.png"))); // NOI18N
         jToggleButton1.setText("jToggleButton1");
         jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

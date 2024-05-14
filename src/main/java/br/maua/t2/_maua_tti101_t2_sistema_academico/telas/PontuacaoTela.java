@@ -48,7 +48,7 @@ public class PontuacaoTela extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(260, 370, 104, 52);
+        jButton1.setBounds(250, 350, 130, 70);
 
         jLabel5.setIcon(new javax.swing.ImageIcon("C:\\20241_maua_tti101_t2_sistema_academico\\src\\main\\images\\Captura de tela 2024-04-25 090846.png")); // NOI18N
         getContentPane().add(jLabel5);

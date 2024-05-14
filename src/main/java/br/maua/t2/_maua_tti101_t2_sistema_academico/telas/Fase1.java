@@ -152,7 +152,7 @@ public void verificar_estado(){
         getContentPane().add(jToggleButton5);
         jToggleButton5.setBounds(30, 220, 129, 122);
 
-        jToggleButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/maua/t2/_maua_tti101_t2_sistema_academico/telas/imagens/mochila.png"))); // NOI18N
+        jToggleButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/maua/t2/_maua_tti101_t2_sistema_academico/telas/imagens/m2.png"))); // NOI18N
         jToggleButton6.setText("jToggleButton1");
         jToggleButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

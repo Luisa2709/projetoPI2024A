@@ -108,6 +108,7 @@ public void verificar_estado(){
         setResizable(false);
         getContentPane().setLayout(null);
 
+        jToggleButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/maua/t2/_maua_tti101_t2_sistema_academico/telas/imagens/numeoro4.png"))); // NOI18N
         jToggleButton1.setText("jToggleButton1");
         jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -117,6 +118,7 @@ public void verificar_estado(){
         getContentPane().add(jToggleButton1);
         jToggleButton1.setBounds(453, 75, 129, 122);
 
+        jToggleButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/maua/t2/_maua_tti101_t2_sistema_academico/telas/imagens/numero3.png"))); // NOI18N
         jToggleButton2.setText("jToggleButton1");
         jToggleButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -126,6 +128,7 @@ public void verificar_estado(){
         getContentPane().add(jToggleButton2);
         jToggleButton2.setBounds(306, 75, 129, 122);
 
+        jToggleButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/maua/t2/_maua_tti101_t2_sistema_academico/telas/imagens/numero2.png"))); // NOI18N
         jToggleButton3.setText("jToggleButton1");
         jToggleButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -135,6 +138,7 @@ public void verificar_estado(){
         getContentPane().add(jToggleButton3);
         jToggleButton3.setBounds(159, 75, 129, 122);
 
+        jToggleButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/maua/t2/_maua_tti101_t2_sistema_academico/telas/imagens/numero1.png"))); // NOI18N
         jToggleButton4.setText("jToggleButton1");
         jToggleButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -144,6 +148,7 @@ public void verificar_estado(){
         getContentPane().add(jToggleButton4);
         jToggleButton4.setBounds(18, 74, 129, 123);
 
+        jToggleButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/maua/t2/_maua_tti101_t2_sistema_academico/telas/imagens/treslivros.png"))); // NOI18N
         jToggleButton5.setText("jToggleButton1");
         jToggleButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -153,6 +158,7 @@ public void verificar_estado(){
         getContentPane().add(jToggleButton5);
         jToggleButton5.setBounds(455, 242, 129, 122);
 
+        jToggleButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/maua/t2/_maua_tti101_t2_sistema_academico/telas/imagens/doislapis.png"))); // NOI18N
         jToggleButton6.setText("jToggleButton1");
         jToggleButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -162,6 +168,7 @@ public void verificar_estado(){
         getContentPane().add(jToggleButton6);
         jToggleButton6.setBounds(308, 242, 129, 122);
 
+        jToggleButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/maua/t2/_maua_tti101_t2_sistema_academico/telas/imagens/mochila.png"))); // NOI18N
         jToggleButton7.setText("jToggleButton1");
         jToggleButton7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -171,6 +178,7 @@ public void verificar_estado(){
         getContentPane().add(jToggleButton7);
         jToggleButton7.setBounds(159, 242, 129, 122);
 
+        jToggleButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/maua/t2/_maua_tti101_t2_sistema_academico/telas/imagens/quatroborrachas.png"))); // NOI18N
         jToggleButton8.setText("jToggleButton1");
         jToggleButton8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

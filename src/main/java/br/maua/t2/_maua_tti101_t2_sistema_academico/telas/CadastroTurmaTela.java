@@ -4,6 +4,10 @@
  */
 package br.maua.t2._maua_tti101_t2_sistema_academico.telas;
 
+import br.maua.t2._maua_tti101_t2_sistema_academico.db.UsuarioDAO;
+import br.maua.t2._maua_tti101_t2_sistema_academico.modelo.Usuario;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author luisa
@@ -31,10 +35,9 @@ public class CadastroTurmaTela extends javax.swing.JFrame {
         jPasswordField1 = new javax.swing.JPasswordField();
         jTextField1 = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         jTextField2.setText("jTextField2");
 
@@ -49,7 +52,7 @@ public class CadastroTurmaTela extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(230, 230, 123, 58);
+        jButton1.setBounds(180, 220, 210, 70);
 
         jPasswordField1.setToolTipText("");
         jPasswordField1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1), "Senha:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 12))); // NOI18N
@@ -59,7 +62,7 @@ public class CadastroTurmaTela extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jPasswordField1);
-        jPasswordField1.setBounds(50, 130, 450, 75);
+        jPasswordField1.setBounds(50, 120, 450, 80);
 
         jTextField1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1), "Nome para cadastro:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 12))); // NOI18N
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
@@ -68,27 +71,21 @@ public class CadastroTurmaTela extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jTextField1);
-        jTextField1.setBounds(50, 30, 450, 81);
+        jTextField1.setBounds(50, 20, 450, 81);
 
         jLabel2.setIcon(new javax.swing.ImageIcon("C:\\20241_maua_tti101_t2_sistema_academico\\src\\main\\images\\Captura de tela 2024-04-25 084554.png")); // NOI18N
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(180, 300, 220, 100);
+        jLabel2.setBounds(350, 290, 220, 100);
 
-        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\20241_maua_tti101_t2_sistema_academico\\src\\main\\images\\estrelas.png")); // NOI18N
-        getContentPane().add(jLabel3);
-        jLabel3.setBounds(-20, 40, 250, 209);
-
-        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\20241_maua_tti101_t2_sistema_academico\\src\\main\\images\\estrelas.png")); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/maua/t2/_maua_tti101_t2_sistema_academico/telas/imagens/mais crianças.png"))); // NOI18N
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(410, 260, 218, 209);
-
-        jLabel5.setIcon(new javax.swing.ImageIcon("C:\\20241_maua_tti101_t2_sistema_academico\\src\\main\\images\\estrelas.png")); // NOI18N
-        getContentPane().add(jLabel5);
-        jLabel5.setBounds(-10, -110, 218, 209);
+        jLabel4.setBounds(10, 260, 160, 130);
 
         jLabel1.setIcon(new javax.swing.ImageIcon("C:\\20241_maua_tti101_t2_sistema_academico\\src\\main\\images\\Captura de tela 2024-04-24 184205.png")); // NOI18N
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(-30, -60, 750, 630);
+        jLabel1.setBounds(-170, -40, 750, 630);
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(27, 330, 100, 60);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -98,8 +95,31 @@ public class CadastroTurmaTela extends javax.swing.JFrame {
     }//GEN-LAST:event_jPasswordField1ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        dispose();
-        new TelaFasess().setVisible(true);
+        
+      try{
+        //1. pegar o login digitado pelo usuario
+        var login = jTextField1.getText();
+        //2. pegar a senha digitada pelo usuario
+        var senha = new String(jPasswordField1.getPassword());
+        var usuario = new Usuario();//cria o usuario no pc
+        usuario.setLogin(login);
+        usuario.setSenha(senha);
+        var dao = new UsuarioDAO();//cria usuario de conexao
+        dao.cadastrar(usuario);//coloca no bd
+        if (dao.verificaProfessor(usuario)){
+                dispose();
+                new PontuacaoProfessor().setVisible(true);
+            } 
+            else{
+                dispose();
+                new TelaFasess().setVisible(true);
+            }
+            
+      }
+      catch(Exception e){
+            System.out.println(e);
+      }
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
@@ -147,7 +167,6 @@ public class CadastroTurmaTela extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
