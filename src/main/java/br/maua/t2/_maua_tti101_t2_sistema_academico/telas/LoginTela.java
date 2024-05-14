@@ -86,7 +86,7 @@ public class LoginTela extends javax.swing.JFrame {
             }
         });
         getContentPane().add(okButton);
-        okButton.setBounds(210, 200, 190, 70);
+        okButton.setBounds(20, 200, 550, 70);
 
         cadastrarButton1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         cadastrarButton1.setText("Não tem login: Criar conta");
@@ -97,31 +97,21 @@ public class LoginTela extends javax.swing.JFrame {
         });
         getContentPane().add(cadastrarButton1);
         cadastrarButton1.setBounds(20, 300, 260, 80);
-
-        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\20241_maua_tti101_t2_sistema_academico\\src\\main\\images\\estrelas.png")); // NOI18N
         getContentPane().add(jLabel4);
         jLabel4.setBounds(440, 260, 300, 210);
-
-        jLabel5.setIcon(new javax.swing.ImageIcon("C:\\20241_maua_tti101_t2_sistema_academico\\src\\main\\images\\estrelas.png")); // NOI18N
         getContentPane().add(jLabel5);
         jLabel5.setBounds(70, -80, 300, 210);
-
-        jLabel6.setIcon(new javax.swing.ImageIcon("C:\\20241_maua_tti101_t2_sistema_academico\\src\\main\\images\\estrelas.png")); // NOI18N
         getContentPane().add(jLabel6);
         jLabel6.setBounds(-10, 30, 410, 270);
-
-        jLabel7.setIcon(new javax.swing.ImageIcon("C:\\20241_maua_tti101_t2_sistema_academico\\src\\main\\images\\estrelas.png")); // NOI18N
         getContentPane().add(jLabel7);
         jLabel7.setBounds(-20, -40, 270, 200);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\20241_maua_tti101_t2_sistema_academico\\src\\main\\images\\image-1614231140gab.jpg")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/maua/t2/_maua_tti101_t2_sistema_academico/telas/imagens/tela azul.jpg"))); // NOI18N
         jLabel1.setName(""); // NOI18N
         getContentPane().add(jLabel1);
         jLabel1.setBounds(0, 0, 610, 460);
-        jLabel1.getAccessibleContext().setAccessibleName("");
-
         getContentPane().add(jPanel1);
-        jPanel1.setBounds(410, 190, 100, 100);
+        jPanel1.setBounds(410, 190, 10, 10);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
