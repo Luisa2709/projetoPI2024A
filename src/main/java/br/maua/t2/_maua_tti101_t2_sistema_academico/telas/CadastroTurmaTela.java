@@ -81,7 +81,7 @@ public class CadastroTurmaTela extends javax.swing.JFrame {
         getContentPane().add(jLabel4);
         jLabel4.setBounds(10, 260, 160, 130);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\20241_maua_tti101_t2_sistema_academico\\src\\main\\images\\Captura de tela 2024-04-24 184205.png")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/maua/t2/_maua_tti101_t2_sistema_academico/telas/imagens/tela rosa.png"))); // NOI18N
         getContentPane().add(jLabel1);
         jLabel1.setBounds(-170, -40, 750, 630);
         getContentPane().add(jLabel3);

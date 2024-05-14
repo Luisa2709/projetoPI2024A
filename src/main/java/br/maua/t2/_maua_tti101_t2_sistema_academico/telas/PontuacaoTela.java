@@ -29,7 +29,6 @@ public class PontuacaoTela extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
-        jLabel5 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
 
@@ -50,15 +49,11 @@ public class PontuacaoTela extends javax.swing.JFrame {
         getContentPane().add(jButton1);
         jButton1.setBounds(250, 350, 130, 70);
 
-        jLabel5.setIcon(new javax.swing.ImageIcon("C:\\20241_maua_tti101_t2_sistema_academico\\src\\main\\images\\Captura de tela 2024-04-25 090846.png")); // NOI18N
-        getContentPane().add(jLabel5);
-        jLabel5.setBounds(190, 110, 230, 120);
-
-        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\20241_maua_tti101_t2_sistema_academico\\src\\main\\images\\parabens.png")); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/maua/t2/_maua_tti101_t2_sistema_academico/telas/imagens/parabens.png"))); // NOI18N
         getContentPane().add(jLabel4);
         jLabel4.setBounds(90, -10, 420, 150);
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\20241_maua_tti101_t2_sistema_academico\\src\\main\\images\\image-1614231140gab.jpg")); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/maua/t2/_maua_tti101_t2_sistema_academico/telas/imagens/tela azul.jpg"))); // NOI18N
         getContentPane().add(jLabel2);
         jLabel2.setBounds(10, 0, 610, 460);
 
@@ -110,6 +105,5 @@ public class PontuacaoTela extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     // End of variables declaration//GEN-END:variables
 }
