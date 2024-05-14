@@ -28,7 +28,7 @@
     <Component class="javax.swing.JButton" name="jButton1">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\20241_maua_tti101_t2_sistema_academico\src\main\images\Captura de tela 2024-04-24 191516.png"/>
+          <Image iconType="3" name="/br/maua/t2/_maua_tti101_t2_sistema_academico/telas/imagens/letras botao.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="jButton1"/>
       </Properties>
@@ -44,7 +44,7 @@
     <Component class="javax.swing.JButton" name="jButton3">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\20241_maua_tti101_t2_sistema_academico\src\main\images\Captura de tela 2024-04-24 192644.png"/>
+          <Image iconType="3" name="/br/maua/t2/_maua_tti101_t2_sistema_academico/telas/imagens/animais botao.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="jButton1"/>
       </Properties>
@@ -60,7 +60,7 @@
     <Component class="javax.swing.JButton" name="jButton4">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\20241_maua_tti101_t2_sistema_academico\src\main\images\Captura de tela 2024-04-24 192151.png"/>
+          <Image iconType="3" name="/br/maua/t2/_maua_tti101_t2_sistema_academico/telas/imagens/numeros botao.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="jButton1"/>
       </Properties>
@@ -76,7 +76,7 @@
     <Component class="javax.swing.JButton" name="jButton5">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\20241_maua_tti101_t2_sistema_academico\src\main\images\Captura de tela 2024-04-24 191018.png"/>
+          <Image iconType="3" name="/br/maua/t2/_maua_tti101_t2_sistema_academico/telas/imagens/cores botao.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="jButton1"/>
       </Properties>
@@ -92,7 +92,7 @@
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\20241_maua_tti101_t2_sistema_academico\src\main\images\branco fundo.png"/>
+          <Image iconType="3" name="/br/maua/t2/_maua_tti101_t2_sistema_academico/telas/imagens/branco fundo.png"/>
         </Property>
       </Properties>
       <Constraints>
