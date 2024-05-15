@@ -51,15 +51,15 @@ public class PontuacaoTela extends javax.swing.JFrame {
         getContentPane().add(jButton1);
         jButton1.setBounds(250, 350, 130, 70);
 
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/maua/t2/_maua_tti101_t2_sistema_academico/telas/imagens/criancas novas.png"))); // NOI18N
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/criancas novas.png"))); // NOI18N
         getContentPane().add(jLabel6);
         jLabel6.setBounds(200, 110, 230, 110);
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/maua/t2/_maua_tti101_t2_sistema_academico/telas/imagens/parabens.png"))); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/parabens.png"))); // NOI18N
         getContentPane().add(jLabel4);
         jLabel4.setBounds(90, -10, 420, 150);
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/maua/t2/_maua_tti101_t2_sistema_academico/telas/imagens/tela azul.jpg"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/tela azul.jpg"))); // NOI18N
         getContentPane().add(jLabel2);
         jLabel2.setBounds(0, 0, 610, 460);
         getContentPane().add(jLabel5);

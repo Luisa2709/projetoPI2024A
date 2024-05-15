@@ -6,9 +6,6 @@
     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
       <Color blue="ff" green="ff" red="ff" type="rgb"/>
     </Property>
-    <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-      <Dimension value="[610, 480]"/>
-    </Property>
     <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
       <Dimension value="[610, 480]"/>
     </Property>
@@ -38,7 +35,7 @@
     <Component class="javax.swing.JToggleButton" name="jToggleButton1">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/br/maua/t2/_maua_tti101_t2_sistema_academico/telas/imagens/numeoro4.png"/>
+          <Image iconType="3" name="/imagens/coracao.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="jToggleButton1"/>
       </Properties>
@@ -54,7 +51,7 @@
     <Component class="javax.swing.JToggleButton" name="jToggleButton2">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/br/maua/t2/_maua_tti101_t2_sistema_academico/telas/imagens/numero3.png"/>
+          <Image iconType="3" name="/imagens/ma&#xe7;a.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="jToggleButton1"/>
       </Properties>
@@ -70,7 +67,7 @@
     <Component class="javax.swing.JToggleButton" name="jToggleButton3">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/br/maua/t2/_maua_tti101_t2_sistema_academico/telas/imagens/numero2.png"/>
+          <Image iconType="3" name="/imagens/elefante.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="jToggleButton1"/>
       </Properties>
@@ -86,7 +83,7 @@
     <Component class="javax.swing.JToggleButton" name="jToggleButton4">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/br/maua/t2/_maua_tti101_t2_sistema_academico/telas/imagens/numero1.png"/>
+          <Image iconType="3" name="/imagens/gato.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="jToggleButton1"/>
       </Properties>
@@ -102,7 +99,7 @@
     <Component class="javax.swing.JToggleButton" name="jToggleButton5">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/br/maua/t2/_maua_tti101_t2_sistema_academico/telas/imagens/treslivros.png"/>
+          <Image iconType="3" name="/imagens/letram.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="jToggleButton1"/>
       </Properties>
@@ -118,7 +115,7 @@
     <Component class="javax.swing.JToggleButton" name="jToggleButton6">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/br/maua/t2/_maua_tti101_t2_sistema_academico/telas/imagens/doislapis.png"/>
+          <Image iconType="3" name="/imagens/letrag.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="jToggleButton1"/>
       </Properties>
@@ -134,7 +131,7 @@
     <Component class="javax.swing.JToggleButton" name="jToggleButton7">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/br/maua/t2/_maua_tti101_t2_sistema_academico/telas/imagens/mochila.png"/>
+          <Image iconType="3" name="/imagens/letraC.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="jToggleButton1"/>
       </Properties>
@@ -150,7 +147,7 @@
     <Component class="javax.swing.JToggleButton" name="jToggleButton8">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/br/maua/t2/_maua_tti101_t2_sistema_academico/telas/imagens/quatroborrachas.png"/>
+          <Image iconType="3" name="/imagens/letraE.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="jToggleButton1"/>
       </Properties>
@@ -166,7 +163,7 @@
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/br/maua/t2/_maua_tti101_t2_sistema_academico/telas/imagens/branco fundo.png"/>
+          <Image iconType="3" name="/imagens/branco fundo.png"/>
         </Property>
         <Property name="opaque" type="boolean" value="true"/>
       </Properties>

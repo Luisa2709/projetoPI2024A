@@ -34,10 +34,11 @@ public class CadastroTurmaTela extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jPasswordField1 = new javax.swing.JPasswordField();
         jTextField1 = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
 
         jTextField2.setText("jTextField2");
 
@@ -52,7 +53,7 @@ public class CadastroTurmaTela extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(180, 220, 210, 70);
+        jButton1.setBounds(60, 270, 210, 70);
 
         jPasswordField1.setToolTipText("");
         jPasswordField1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1), "Senha:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 12))); // NOI18N
@@ -72,20 +73,26 @@ public class CadastroTurmaTela extends javax.swing.JFrame {
         });
         getContentPane().add(jTextField1);
         jTextField1.setBounds(50, 20, 450, 81);
-
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/maua/t2/_maua_tti101_t2_sistema_academico/telas/imagens/turiminha semear logo tela cadastro.png"))); // NOI18N
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(350, 290, 220, 100);
-
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/maua/t2/_maua_tti101_t2_sistema_academico/telas/imagens/mais crianças.png"))); // NOI18N
-        getContentPane().add(jLabel4);
-        jLabel4.setBounds(10, 260, 160, 130);
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/maua/t2/_maua_tti101_t2_sistema_academico/telas/imagens/tela rosa.png"))); // NOI18N
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(-170, -40, 750, 630);
         getContentPane().add(jLabel3);
         jLabel3.setBounds(27, 330, 100, 60);
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/turiminha semear logo tela cadastro.png"))); // NOI18N
+        jLabel1.setText("jLabel1");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(280, 200, 190, 180);
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/tela rosa.png"))); // NOI18N
+        jLabel5.setText("jLabel5");
+        getContentPane().add(jLabel5);
+        jLabel5.setBounds(-3, -20, 610, 470);
+
+        jLabel2.setText("jLabel2");
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(420, 270, 38, 16);
+
+        jLabel4.setText("jLabel4");
+        getContentPane().add(jLabel4);
+        jLabel4.setBounds(440, 320, 38, 16);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -167,6 +174,7 @@ public class CadastroTurmaTela extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;

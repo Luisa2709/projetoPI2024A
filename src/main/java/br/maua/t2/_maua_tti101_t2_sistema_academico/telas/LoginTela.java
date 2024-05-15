@@ -76,17 +76,17 @@ public class LoginTela extends javax.swing.JFrame {
             }
         });
         getContentPane().add(convidadoButton);
-        convidadoButton.setBounds(300, 300, 270, 80);
+        convidadoButton.setBounds(310, 280, 270, 80);
 
         okButton.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        okButton.setText("OK");
+        okButton.setText("Finalizar Login");
         okButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 okButtonActionPerformed(evt);
             }
         });
         getContentPane().add(okButton);
-        okButton.setBounds(20, 200, 550, 70);
+        okButton.setBounds(160, 190, 290, 80);
 
         cadastrarButton1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         cadastrarButton1.setText("Não tem login: Criar conta");
@@ -96,7 +96,7 @@ public class LoginTela extends javax.swing.JFrame {
             }
         });
         getContentPane().add(cadastrarButton1);
-        cadastrarButton1.setBounds(20, 300, 260, 80);
+        cadastrarButton1.setBounds(20, 280, 260, 80);
         getContentPane().add(jLabel4);
         jLabel4.setBounds(440, 260, 300, 210);
         getContentPane().add(jLabel5);
