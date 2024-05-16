@@ -13,6 +13,10 @@ public class Usuario {
     private static String senha;
     private static boolean professor;
     public static int pontuacao = 1000;
+    public static boolean Fase1 = false;
+    public static boolean Fase2 = false;
+    public static boolean Fase3 = false;
+    public static boolean Fase4 = false;
    
 
     public String getLogin() {

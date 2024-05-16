@@ -103,7 +103,7 @@ public class PontuacaoProfessor extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new PontuacaoProfessor().setVisible(true);
+                //new PontuacaoProfessor().setVisible(true);
             }
         });
     }
