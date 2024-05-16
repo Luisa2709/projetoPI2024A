@@ -4,6 +4,7 @@
  */
 package br.maua.t2._maua_tti101_t2_sistema_academico.telas;
 
+
 /**
  *
  * @author luisa
@@ -15,6 +16,8 @@ public class PontuacaoTela extends javax.swing.JFrame {
      */
     public PontuacaoTela() {
         initComponents();
+
+         
     }
 
     /**
@@ -29,10 +32,10 @@ public class PontuacaoTela extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
 
         jLabel1.setText("jLabel1");
 
@@ -51,19 +54,21 @@ public class PontuacaoTela extends javax.swing.JFrame {
         getContentPane().add(jButton1);
         jButton1.setBounds(250, 350, 130, 70);
 
+        jLabel7.setText("jLabel7");
+        getContentPane().add(jLabel7);
+        jLabel7.setBounds(300, 280, 37, 16);
+
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/criancas novas.png"))); // NOI18N
         getContentPane().add(jLabel6);
-        jLabel6.setBounds(200, 110, 230, 110);
+        jLabel6.setBounds(210, 140, 230, 110);
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/parabens.png"))); // NOI18N
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(90, -10, 420, 150);
+        jLabel4.setBounds(110, 20, 420, 150);
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/tela azul.jpg"))); // NOI18N
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(0, 0, 610, 460);
-        getContentPane().add(jLabel5);
-        jLabel5.setBounds(520, 310, 37, 0);
+        jLabel2.setBounds(-10, 0, 610, 460);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -113,7 +118,7 @@ public class PontuacaoTela extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     // End of variables declaration//GEN-END:variables
 }

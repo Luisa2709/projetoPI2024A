@@ -57,4 +57,27 @@ public class UsuarioDAO {
     public boolean verificaProfessor(Usuario u){//verifica se eh professor
         return u.getLogin().contains("PROFESSOR");
     }
+    public String[] getTurmas() throws Exception{
+        //1. Especificar o comando SQL (SELECT)
+        String sql = "SELECT DISTINCT SENHA FROM USUARIOS WHERE PROFESSOR = 0 ORDER BY ASC;";
+        //2. Estabelecer uma conexao com o banco
+        Connection conexao = new ConnectionFactory().obterConexao();
+        //3. Preparar o comando
+        PreparedStatement ps = conexao.prepareStatement(sql);
+        //4. Executar o comando SQL
+        ResultSet rs = ps.executeQuery();
+        //5. Inicia array(lista) String 
+        String[] turmas = {};
+        //6. Contagem
+        int i = 0;
+        //7. Laço que vai adicionar cada senha a lista
+        while (rs.next()){
+            turmas[i++] = rs.getString(1);
+        }
+        //8. Fecha as conexoes 
+        rs.close();
+        conexao.close(); 
+        //9. Devolve as turmas
+        return turmas;
+    }
 }

@@ -38,7 +38,6 @@ public class LoginTela extends javax.swing.JFrame {
         cadastrarButton1 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
@@ -76,17 +75,17 @@ public class LoginTela extends javax.swing.JFrame {
             }
         });
         getContentPane().add(convidadoButton);
-        convidadoButton.setBounds(310, 280, 270, 80);
+        convidadoButton.setBounds(310, 300, 270, 80);
 
         okButton.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        okButton.setText("Finalizar Login");
+        okButton.setText("OK");
         okButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 okButtonActionPerformed(evt);
             }
         });
         getContentPane().add(okButton);
-        okButton.setBounds(160, 190, 290, 80);
+        okButton.setBounds(180, 190, 240, 80);
 
         cadastrarButton1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         cadastrarButton1.setText("Não tem login: Criar conta");
@@ -96,17 +95,15 @@ public class LoginTela extends javax.swing.JFrame {
             }
         });
         getContentPane().add(cadastrarButton1);
-        cadastrarButton1.setBounds(20, 280, 260, 80);
+        cadastrarButton1.setBounds(20, 300, 260, 80);
         getContentPane().add(jLabel4);
         jLabel4.setBounds(440, 260, 300, 210);
         getContentPane().add(jLabel5);
         jLabel5.setBounds(70, -80, 300, 210);
-        getContentPane().add(jLabel6);
-        jLabel6.setBounds(-10, 30, 410, 270);
         getContentPane().add(jLabel7);
         jLabel7.setBounds(-20, -40, 270, 200);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/maua/t2/_maua_tti101_t2_sistema_academico/telas/imagens/tela azul.jpg"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/tela azul.jpg"))); // NOI18N
         jLabel1.setName(""); // NOI18N
         getContentPane().add(jLabel1);
         jLabel1.setBounds(0, 0, 610, 460);
@@ -224,7 +221,6 @@ public class LoginTela extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField loginTextField;

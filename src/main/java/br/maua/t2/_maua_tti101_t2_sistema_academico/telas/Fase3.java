@@ -4,6 +4,7 @@
  */
 package br.maua.t2._maua_tti101_t2_sistema_academico.telas;
 
+import br.maua.t2._maua_tti101_t2_sistema_academico.modelo.Usuario;
 import java.awt.Color;
 import javax.swing.BorderFactory;
 
@@ -55,7 +56,11 @@ public void verificar_estado(){
         jToggleButton5.setEnabled(false);
     }
 }
-
+public void verifica_fase(){
+    if ((peixe && !mar) || (abelha && !colmeia)|| (leao && !floresta) || (macaco && !selva)) {
+        Usuario.pontuacao = Usuario.pontuacao - 25;
+    }
+}
     /**
      * Creates new form Fase3
      */
@@ -196,7 +201,8 @@ public void verificar_estado(){
             macaco = true;
             floresta = true;
             verificar_estado();
-        }                        
+        } 
+        verifica_fase();
     }//GEN-LAST:event_jToggleButton1ActionPerformed
 
     private void jToggleButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton2ActionPerformed
@@ -206,7 +212,8 @@ public void verificar_estado(){
             leao = true;
             selva = true;
             verificar_estado();
-        }                          
+        }  
+        verifica_fase();
     }//GEN-LAST:event_jToggleButton2ActionPerformed
 
     private void jToggleButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton3ActionPerformed
@@ -216,7 +223,8 @@ public void verificar_estado(){
             leao = true;
             selva = true;
             verificar_estado();
-        }                         
+        }   
+        verifica_fase();
     }//GEN-LAST:event_jToggleButton3ActionPerformed
 
     private void jToggleButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton4ActionPerformed
@@ -226,7 +234,8 @@ public void verificar_estado(){
             peixe = true;
             mar = true;
             verificar_estado();       
-        }                      
+        }    
+        verifica_fase();
     }//GEN-LAST:event_jToggleButton4ActionPerformed
 
     private void jToggleButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton5ActionPerformed
@@ -236,7 +245,8 @@ public void verificar_estado(){
             colmeia = true;
             abelha = true;
             verificar_estado(); 
-        }                         
+        }  
+        verifica_fase();
     }//GEN-LAST:event_jToggleButton5ActionPerformed
 
     private void jToggleButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton6ActionPerformed
@@ -246,7 +256,8 @@ public void verificar_estado(){
             macaco = true;
             floresta = true;
             verificar_estado();
-        }                          
+        }  
+        verifica_fase();
     }//GEN-LAST:event_jToggleButton6ActionPerformed
 
     private void jToggleButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton7ActionPerformed
@@ -256,7 +267,8 @@ public void verificar_estado(){
             peixe = true;
             mar = true;
             verificar_estado(); 
-        }                         
+        } 
+        verifica_fase();
     }//GEN-LAST:event_jToggleButton7ActionPerformed
 
     private void jToggleButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton10ActionPerformed
@@ -267,6 +279,7 @@ public void verificar_estado(){
             abelha = true;
             verificar_estado();
         }
+        verifica_fase();
     }//GEN-LAST:event_jToggleButton10ActionPerformed
 
     /**

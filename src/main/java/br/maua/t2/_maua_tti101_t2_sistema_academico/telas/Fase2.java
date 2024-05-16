@@ -4,6 +4,7 @@
  */
 package br.maua.t2._maua_tti101_t2_sistema_academico.telas;
 
+import br.maua.t2._maua_tti101_t2_sistema_academico.modelo.Usuario;
 import java.awt.Color;
 import javax.swing.BorderFactory;
 
@@ -53,6 +54,11 @@ public void verificar_estado(){
     if (quatro_borrachas) {
         jToggleButton8.setBorder(BorderFactory.createLineBorder(Color.green));
         jToggleButton8.setEnabled(false);
+    }
+}
+public void verifica_fase(){
+    if ((botao_um && !uma_mochila) || (botao_dois && !dois_lapis)|| (botao_tres && !tres_livros) || (botao_quatro && !quatro_borrachas)) {
+        Usuario.pontuacao = Usuario.pontuacao - 25;
     }
 }
     /**
@@ -197,6 +203,7 @@ public void verificar_estado(){
             botao_tres = true;
             verificar_estado();
         }
+        verifica_fase();
     }//GEN-LAST:event_jToggleButton1ActionPerformed
 
     private void jToggleButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton2ActionPerformed
@@ -207,6 +214,7 @@ public void verificar_estado(){
             botao_tres = true;
             verificar_estado();
         }
+        verifica_fase();
     }//GEN-LAST:event_jToggleButton2ActionPerformed
 
     private void jToggleButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton3ActionPerformed
@@ -216,7 +224,8 @@ public void verificar_estado(){
             botao_dois = true;
             dois_lapis = true;
             verificar_estado();
-        }     
+        } 
+        verifica_fase();
     }//GEN-LAST:event_jToggleButton3ActionPerformed
 
     private void jToggleButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton4ActionPerformed
@@ -226,7 +235,8 @@ public void verificar_estado(){
             botao_um = true;
             uma_mochila = true;
             verificar_estado();
-        }    
+        } 
+        verifica_fase();
     }//GEN-LAST:event_jToggleButton4ActionPerformed
 
     private void jToggleButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton6ActionPerformed
@@ -237,6 +247,7 @@ public void verificar_estado(){
             uma_mochila = true;
             verificar_estado();
         }
+        verifica_fase();
     }//GEN-LAST:event_jToggleButton6ActionPerformed
 
     private void jToggleButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton7ActionPerformed
@@ -247,6 +258,7 @@ public void verificar_estado(){
             dois_lapis = true;
             verificar_estado();
         }
+        verifica_fase();
     }//GEN-LAST:event_jToggleButton7ActionPerformed
 
     private void jToggleButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton8ActionPerformed
@@ -257,6 +269,7 @@ public void verificar_estado(){
             quatro_borrachas = true;
             verificar_estado();
         }
+        verifica_fase();
     }//GEN-LAST:event_jToggleButton8ActionPerformed
 
     private void jToggleButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton9ActionPerformed
@@ -266,7 +279,8 @@ public void verificar_estado(){
             botao_quatro = true;
             quatro_borrachas = true;
             verificar_estado();
-        }   
+        }  
+        verifica_fase();
     }//GEN-LAST:event_jToggleButton9ActionPerformed
 
     /**

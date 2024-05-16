@@ -9,10 +9,10 @@ package br.maua.t2._maua_tti101_t2_sistema_academico.modelo;
  * @author luisa
  */
 public class Usuario {
-    private String login;
-    private String senha;
-    private boolean professor;
-    
+    private static String login;
+    private static String senha;
+    private static boolean professor;
+    public static int pontuacao = 1000;
    
 
     public String getLogin() {
