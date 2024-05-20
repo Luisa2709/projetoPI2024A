@@ -31,11 +31,11 @@ public class LoginTela extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        loginTextField = new javax.swing.JTextField();
-        senhaPasswordField = new javax.swing.JPasswordField();
+        digiteSeuLoginButton = new javax.swing.JTextField();
+        digiteSuaSenhaButton = new javax.swing.JPasswordField();
         convidadoButton = new javax.swing.JButton();
         okButton = new javax.swing.JButton();
-        cadastrarButton1 = new javax.swing.JButton();
+        cadastrarButton = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
@@ -48,24 +48,24 @@ public class LoginTela extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(600, 450));
         getContentPane().setLayout(null);
 
-        loginTextField.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1), "Digite seu Login:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 12))); // NOI18N
-        loginTextField.addActionListener(new java.awt.event.ActionListener() {
+        digiteSeuLoginButton.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1), "Digite seu Login:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 12))); // NOI18N
+        digiteSeuLoginButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                loginTextFieldActionPerformed(evt);
+                digiteSeuLoginButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(loginTextField);
-        loginTextField.setBounds(20, 20, 560, 70);
+        getContentPane().add(digiteSeuLoginButton);
+        digiteSeuLoginButton.setBounds(20, 20, 560, 70);
 
-        senhaPasswordField.setForeground(new java.awt.Color(0, 142, 246));
-        senhaPasswordField.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1), "Digite sua senha:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 12))); // NOI18N
-        senhaPasswordField.addActionListener(new java.awt.event.ActionListener() {
+        digiteSuaSenhaButton.setForeground(new java.awt.Color(0, 142, 246));
+        digiteSuaSenhaButton.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1), "Digite sua senha:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 12))); // NOI18N
+        digiteSuaSenhaButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                senhaPasswordFieldActionPerformed(evt);
+                digiteSuaSenhaButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(senhaPasswordField);
-        senhaPasswordField.setBounds(20, 100, 560, 70);
+        getContentPane().add(digiteSuaSenhaButton);
+        digiteSuaSenhaButton.setBounds(20, 100, 560, 70);
 
         convidadoButton.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         convidadoButton.setText("Convidado");
@@ -87,15 +87,15 @@ public class LoginTela extends javax.swing.JFrame {
         getContentPane().add(okButton);
         okButton.setBounds(180, 190, 240, 80);
 
-        cadastrarButton1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        cadastrarButton1.setText("Não tem login: Criar conta");
-        cadastrarButton1.addActionListener(new java.awt.event.ActionListener() {
+        cadastrarButton.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        cadastrarButton.setText("Não tem login: Criar conta");
+        cadastrarButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cadastrarButton1ActionPerformed(evt);
+                cadastrarButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(cadastrarButton1);
-        cadastrarButton1.setBounds(20, 300, 260, 80);
+        getContentPane().add(cadastrarButton);
+        cadastrarButton.setBounds(20, 300, 260, 80);
         getContentPane().add(jLabel4);
         jLabel4.setBounds(440, 260, 300, 210);
         getContentPane().add(jLabel5);
@@ -113,17 +113,17 @@ public class LoginTela extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void loginTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginTextFieldActionPerformed
+    private void digiteSeuLoginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_digiteSeuLoginButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_loginTextFieldActionPerformed
+    }//GEN-LAST:event_digiteSeuLoginButtonActionPerformed
 
     private void okButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okButtonActionPerformed
         
       try{
         //1. pegar o login digitado pelo usuario
-        var login = loginTextField.getText();
+        var login = digiteSeuLoginButton.getText();
         //2. pegar a senha digitada pelo usuario
-        var senha = new String(senhaPasswordField.getPassword());
+        var senha = new String(digiteSuaSenhaButton.getPassword());
         //3. verificar se ele digitou admin/admin
         var usuario = new Usuario();
         usuario.setLogin(login);
@@ -169,15 +169,15 @@ public class LoginTela extends javax.swing.JFrame {
         
     }//GEN-LAST:event_convidadoButtonActionPerformed
 
-    private void cadastrarButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarButton1ActionPerformed
+    private void cadastrarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarButtonActionPerformed
         var ctt = new CadastroTurmaTela();
         ctt.setVisible(true);
         dispose();
-    }//GEN-LAST:event_cadastrarButton1ActionPerformed
+    }//GEN-LAST:event_cadastrarButtonActionPerformed
 
-    private void senhaPasswordFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_senhaPasswordFieldActionPerformed
+    private void digiteSuaSenhaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_digiteSuaSenhaButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_senhaPasswordFieldActionPerformed
+    }//GEN-LAST:event_digiteSuaSenhaButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -216,15 +216,15 @@ public class LoginTela extends javax.swing.JFrame {
 
    
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton cadastrarButton1;
+    private javax.swing.JButton cadastrarButton;
     private javax.swing.JButton convidadoButton;
+    private javax.swing.JTextField digiteSeuLoginButton;
+    private javax.swing.JPasswordField digiteSuaSenhaButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField loginTextField;
     private javax.swing.JButton okButton;
-    private javax.swing.JPasswordField senhaPasswordField;
     // End of variables declaration//GEN-END:variables
 }

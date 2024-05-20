@@ -31,7 +31,7 @@ public class PontuacaoTela extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        fimButton = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -44,15 +44,15 @@ public class PontuacaoTela extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
 
-        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton1.setText("FIM");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        fimButton.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        fimButton.setText("FIM");
+        fimButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                fimButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1);
-        jButton1.setBounds(250, 350, 130, 70);
+        getContentPane().add(fimButton);
+        fimButton.setBounds(250, 350, 130, 70);
 
         jLabel7.setText("jLabel7");
         getContentPane().add(jLabel7);
@@ -73,9 +73,9 @@ public class PontuacaoTela extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void fimButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fimButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_fimButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -113,7 +113,7 @@ public class PontuacaoTela extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton fimButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

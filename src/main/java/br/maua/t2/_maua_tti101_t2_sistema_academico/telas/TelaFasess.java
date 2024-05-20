@@ -26,55 +26,55 @@ public class TelaFasess extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        botaoLetrasButton = new javax.swing.JButton();
+        botaoAnimaisButton = new javax.swing.JButton();
+        botaoNumerosButton = new javax.swing.JButton();
+        botaoCoresButton = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/letras botao.png"))); // NOI18N
-        jButton1.setText("jButton1");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        botaoLetrasButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/letras botao.png"))); // NOI18N
+        botaoLetrasButton.setText("jButton1");
+        botaoLetrasButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                botaoLetrasButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1);
-        jButton1.setBounds(320, 250, 232, 104);
+        getContentPane().add(botaoLetrasButton);
+        botaoLetrasButton.setBounds(320, 250, 232, 104);
 
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/animais botao.png"))); // NOI18N
-        jButton3.setText("jButton1");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        botaoAnimaisButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/animais botao.png"))); // NOI18N
+        botaoAnimaisButton.setText("jButton1");
+        botaoAnimaisButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                botaoAnimaisButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3);
-        jButton3.setBounds(40, 250, 232, 103);
+        getContentPane().add(botaoAnimaisButton);
+        botaoAnimaisButton.setBounds(40, 250, 232, 103);
 
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/numeros botao.png"))); // NOI18N
-        jButton4.setText("jButton1");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        botaoNumerosButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/numeros botao.png"))); // NOI18N
+        botaoNumerosButton.setText("jButton1");
+        botaoNumerosButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                botaoNumerosButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton4);
-        jButton4.setBounds(320, 80, 232, 102);
+        getContentPane().add(botaoNumerosButton);
+        botaoNumerosButton.setBounds(320, 80, 232, 102);
 
-        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/cores botao.png"))); // NOI18N
-        jButton5.setText("jButton1");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        botaoCoresButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/cores botao.png"))); // NOI18N
+        botaoCoresButton.setText("jButton1");
+        botaoCoresButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                botaoCoresButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton5);
-        jButton5.setBounds(40, 80, 232, 102);
+        getContentPane().add(botaoCoresButton);
+        botaoCoresButton.setBounds(40, 80, 232, 102);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/branco fundo.png"))); // NOI18N
         getContentPane().add(jLabel1);
@@ -87,25 +87,25 @@ public class TelaFasess extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void botaoCoresButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoCoresButtonActionPerformed
         dispose();
             new Fase1().setVisible(true);
-    }//GEN-LAST:event_jButton5ActionPerformed
+    }//GEN-LAST:event_botaoCoresButtonActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void botaoLetrasButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoLetrasButtonActionPerformed
         dispose();
             new Fase4().setVisible(true);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_botaoLetrasButtonActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void botaoNumerosButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoNumerosButtonActionPerformed
         dispose();
             new Fase2().setVisible(true);
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_botaoNumerosButtonActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void botaoAnimaisButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoAnimaisButtonActionPerformed
         dispose();
             new Fase3().setVisible(true);
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_botaoAnimaisButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -143,10 +143,10 @@ public class TelaFasess extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
+    private javax.swing.JButton botaoAnimaisButton;
+    private javax.swing.JButton botaoCoresButton;
+    private javax.swing.JButton botaoLetrasButton;
+    private javax.swing.JButton botaoNumerosButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables

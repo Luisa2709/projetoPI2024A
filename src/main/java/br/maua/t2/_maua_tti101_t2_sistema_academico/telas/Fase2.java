@@ -24,36 +24,36 @@ boolean tres_livros = false;
 boolean quatro_borrachas = false;
 public void verificar_estado(){
     if (botao_um) {
-        jToggleButton4.setBorder(BorderFactory.createLineBorder(Color.green));
-        jToggleButton4.setEnabled(false);
+        botaoUmButton.setBorder(BorderFactory.createLineBorder(Color.green));
+        botaoUmButton.setEnabled(false);
     }
     if (uma_mochila) {
-        jToggleButton6.setBorder(BorderFactory.createLineBorder(Color.green));
-        jToggleButton6.setEnabled(false);
+        botaoMochilaButton.setBorder(BorderFactory.createLineBorder(Color.green));
+        botaoMochilaButton.setEnabled(false);
     }
     if (botao_dois) {
-        jToggleButton3.setBorder(BorderFactory.createLineBorder(Color.green));
-        jToggleButton3.setEnabled(false);
+        botaoDoisButton.setBorder(BorderFactory.createLineBorder(Color.green));
+        botaoDoisButton.setEnabled(false);
     }
     if (dois_lapis) {
-        jToggleButton7.setBorder(BorderFactory.createLineBorder(Color.green));
-        jToggleButton7.setEnabled(false);
+        botaoLapisButton.setBorder(BorderFactory.createLineBorder(Color.green));
+        botaoLapisButton.setEnabled(false);
     }
     if (botao_tres) {
-        jToggleButton2.setBorder(BorderFactory.createLineBorder(Color.green));
-        jToggleButton2.setEnabled(false);
+        botaoTresButton.setBorder(BorderFactory.createLineBorder(Color.green));
+        botaoTresButton.setEnabled(false);
     }
     if (tres_livros) {
-        jToggleButton1.setBorder(BorderFactory.createLineBorder(Color.green));
-        jToggleButton1.setEnabled(false);
+        botaoLivrosButton.setBorder(BorderFactory.createLineBorder(Color.green));
+        botaoLivrosButton.setEnabled(false);
     }
     if (botao_quatro) {
-        jToggleButton9.setBorder(BorderFactory.createLineBorder(Color.green));
-        jToggleButton9.setEnabled(false);
+        botaoQuatroButton.setBorder(BorderFactory.createLineBorder(Color.green));
+        botaoQuatroButton.setEnabled(false);
     }
     if (quatro_borrachas) {
-        jToggleButton8.setBorder(BorderFactory.createLineBorder(Color.green));
-        jToggleButton8.setEnabled(false);
+        botaoBorrachasButton.setBorder(BorderFactory.createLineBorder(Color.green));
+        botaoBorrachasButton.setEnabled(false);
     }
 }
 public void verifica_fase(){
@@ -95,98 +95,98 @@ public void verifica_fase(){
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jToggleButton1 = new javax.swing.JToggleButton();
-        jToggleButton2 = new javax.swing.JToggleButton();
-        jToggleButton3 = new javax.swing.JToggleButton();
-        jToggleButton4 = new javax.swing.JToggleButton();
-        jToggleButton6 = new javax.swing.JToggleButton();
-        jToggleButton7 = new javax.swing.JToggleButton();
-        jToggleButton8 = new javax.swing.JToggleButton();
-        jToggleButton9 = new javax.swing.JToggleButton();
+        botaoLivrosButton = new javax.swing.JToggleButton();
+        botaoTresButton = new javax.swing.JToggleButton();
+        botaoDoisButton = new javax.swing.JToggleButton();
+        botaoUmButton = new javax.swing.JToggleButton();
+        botaoMochilaButton = new javax.swing.JToggleButton();
+        botaoLapisButton = new javax.swing.JToggleButton();
+        botaoBorrachasButton = new javax.swing.JToggleButton();
+        botaoQuatroButton = new javax.swing.JToggleButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
 
-        jToggleButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/treslivros.png"))); // NOI18N
-        jToggleButton1.setText("jToggleButton1");
-        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
+        botaoLivrosButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/treslivros.png"))); // NOI18N
+        botaoLivrosButton.setText("jToggleButton1");
+        botaoLivrosButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton1ActionPerformed(evt);
+                botaoLivrosButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(jToggleButton1);
-        jToggleButton1.setBounds(450, 240, 129, 122);
+        getContentPane().add(botaoLivrosButton);
+        botaoLivrosButton.setBounds(450, 240, 129, 122);
 
-        jToggleButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/numero3.png"))); // NOI18N
-        jToggleButton2.setText("jToggleButton1");
-        jToggleButton2.addActionListener(new java.awt.event.ActionListener() {
+        botaoTresButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/numero3.png"))); // NOI18N
+        botaoTresButton.setText("jToggleButton1");
+        botaoTresButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton2ActionPerformed(evt);
+                botaoTresButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(jToggleButton2);
-        jToggleButton2.setBounds(310, 60, 130, 122);
+        getContentPane().add(botaoTresButton);
+        botaoTresButton.setBounds(310, 60, 130, 122);
 
-        jToggleButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/numero2.png"))); // NOI18N
-        jToggleButton3.setText("jToggleButton1");
-        jToggleButton3.addActionListener(new java.awt.event.ActionListener() {
+        botaoDoisButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/numero2.png"))); // NOI18N
+        botaoDoisButton.setText("jToggleButton1");
+        botaoDoisButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton3ActionPerformed(evt);
+                botaoDoisButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(jToggleButton3);
-        jToggleButton3.setBounds(160, 60, 129, 122);
+        getContentPane().add(botaoDoisButton);
+        botaoDoisButton.setBounds(160, 60, 129, 122);
 
-        jToggleButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/numero1.png"))); // NOI18N
-        jToggleButton4.setText("jToggleButton1");
-        jToggleButton4.addActionListener(new java.awt.event.ActionListener() {
+        botaoUmButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/numero1.png"))); // NOI18N
+        botaoUmButton.setText("jToggleButton1");
+        botaoUmButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton4ActionPerformed(evt);
+                botaoUmButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(jToggleButton4);
-        jToggleButton4.setBounds(20, 60, 129, 122);
+        getContentPane().add(botaoUmButton);
+        botaoUmButton.setBounds(20, 60, 129, 122);
 
-        jToggleButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/mochila.png"))); // NOI18N
-        jToggleButton6.setText("jToggleButton1");
-        jToggleButton6.addActionListener(new java.awt.event.ActionListener() {
+        botaoMochilaButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/mochila.png"))); // NOI18N
+        botaoMochilaButton.setText("jToggleButton1");
+        botaoMochilaButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton6ActionPerformed(evt);
+                botaoMochilaButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(jToggleButton6);
-        jToggleButton6.setBounds(160, 240, 129, 122);
+        getContentPane().add(botaoMochilaButton);
+        botaoMochilaButton.setBounds(160, 240, 129, 122);
 
-        jToggleButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/doislapis.png"))); // NOI18N
-        jToggleButton7.setText("jToggleButton1");
-        jToggleButton7.addActionListener(new java.awt.event.ActionListener() {
+        botaoLapisButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/doislapis.png"))); // NOI18N
+        botaoLapisButton.setText("jToggleButton1");
+        botaoLapisButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton7ActionPerformed(evt);
+                botaoLapisButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(jToggleButton7);
-        jToggleButton7.setBounds(310, 240, 129, 120);
+        getContentPane().add(botaoLapisButton);
+        botaoLapisButton.setBounds(310, 240, 129, 120);
 
-        jToggleButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/quatroborrachas.png"))); // NOI18N
-        jToggleButton8.setText("jToggleButton1");
-        jToggleButton8.addActionListener(new java.awt.event.ActionListener() {
+        botaoBorrachasButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/quatroborrachas.png"))); // NOI18N
+        botaoBorrachasButton.setText("jToggleButton1");
+        botaoBorrachasButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton8ActionPerformed(evt);
+                botaoBorrachasButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(jToggleButton8);
-        jToggleButton8.setBounds(10, 240, 129, 122);
+        getContentPane().add(botaoBorrachasButton);
+        botaoBorrachasButton.setBounds(10, 240, 129, 122);
 
-        jToggleButton9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/numeoro4.png"))); // NOI18N
-        jToggleButton9.setText("jToggleButton1");
-        jToggleButton9.addActionListener(new java.awt.event.ActionListener() {
+        botaoQuatroButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/numeoro4.png"))); // NOI18N
+        botaoQuatroButton.setText("jToggleButton1");
+        botaoQuatroButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton9ActionPerformed(evt);
+                botaoQuatroButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(jToggleButton9);
-        jToggleButton9.setBounds(450, 60, 129, 122);
+        getContentPane().add(botaoQuatroButton);
+        botaoQuatroButton.setBounds(450, 60, 129, 122);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/branco fundo.png"))); // NOI18N
         getContentPane().add(jLabel1);
@@ -195,7 +195,7 @@ public void verifica_fase(){
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
+    private void botaoLivrosButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoLivrosButtonActionPerformed
         //três livros
         int valor = 6;
         if (!tres_livros && !botao_tres && avaliarSelecionado(valor)){
@@ -204,9 +204,9 @@ public void verifica_fase(){
             verificar_estado();
         }
         verifica_fase();
-    }//GEN-LAST:event_jToggleButton1ActionPerformed
+    }//GEN-LAST:event_botaoLivrosButtonActionPerformed
 
-    private void jToggleButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton2ActionPerformed
+    private void botaoTresButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoTresButtonActionPerformed
         //três
         int valor = 2;
         if (!tres_livros && !botao_tres && avaliarSelecionado(valor)){
@@ -215,9 +215,9 @@ public void verifica_fase(){
             verificar_estado();
         }
         verifica_fase();
-    }//GEN-LAST:event_jToggleButton2ActionPerformed
+    }//GEN-LAST:event_botaoTresButtonActionPerformed
 
-    private void jToggleButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton3ActionPerformed
+    private void botaoDoisButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoDoisButtonActionPerformed
         //dois
          int valor = 1;
         if (!botao_dois && !dois_lapis && avaliarSelecionado(valor)){
@@ -226,9 +226,9 @@ public void verifica_fase(){
             verificar_estado();
         } 
         verifica_fase();
-    }//GEN-LAST:event_jToggleButton3ActionPerformed
+    }//GEN-LAST:event_botaoDoisButtonActionPerformed
 
-    private void jToggleButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton4ActionPerformed
+    private void botaoUmButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoUmButtonActionPerformed
         //um
         int valor = 0;
         if (!botao_um && !uma_mochila && avaliarSelecionado(valor)){
@@ -237,9 +237,9 @@ public void verifica_fase(){
             verificar_estado();
         } 
         verifica_fase();
-    }//GEN-LAST:event_jToggleButton4ActionPerformed
+    }//GEN-LAST:event_botaoUmButtonActionPerformed
 
-    private void jToggleButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton6ActionPerformed
+    private void botaoMochilaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoMochilaButtonActionPerformed
         //uma mochila
         int valor = 4;
         if (!botao_um && !uma_mochila && avaliarSelecionado(valor)){
@@ -248,9 +248,9 @@ public void verifica_fase(){
             verificar_estado();
         }
         verifica_fase();
-    }//GEN-LAST:event_jToggleButton6ActionPerformed
+    }//GEN-LAST:event_botaoMochilaButtonActionPerformed
 
-    private void jToggleButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton7ActionPerformed
+    private void botaoLapisButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoLapisButtonActionPerformed
         //dois lápis
         int valor = 5;
         if (!botao_dois && !dois_lapis && avaliarSelecionado(valor)){
@@ -259,9 +259,9 @@ public void verifica_fase(){
             verificar_estado();
         }
         verifica_fase();
-    }//GEN-LAST:event_jToggleButton7ActionPerformed
+    }//GEN-LAST:event_botaoLapisButtonActionPerformed
 
-    private void jToggleButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton8ActionPerformed
+    private void botaoBorrachasButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoBorrachasButtonActionPerformed
         //quatro borrachas
         int valor = 7;
         if (!botao_quatro && !quatro_borrachas && avaliarSelecionado(valor)){
@@ -270,9 +270,9 @@ public void verifica_fase(){
             verificar_estado();
         }
         verifica_fase();
-    }//GEN-LAST:event_jToggleButton8ActionPerformed
+    }//GEN-LAST:event_botaoBorrachasButtonActionPerformed
 
-    private void jToggleButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton9ActionPerformed
+    private void botaoQuatroButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoQuatroButtonActionPerformed
         //quatro
         int valor = 3;
         if (!botao_quatro && !quatro_borrachas && avaliarSelecionado(valor)){
@@ -281,7 +281,7 @@ public void verifica_fase(){
             verificar_estado();
         }  
         verifica_fase();
-    }//GEN-LAST:event_jToggleButton9ActionPerformed
+    }//GEN-LAST:event_botaoQuatroButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -319,14 +319,14 @@ public void verifica_fase(){
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JToggleButton botaoBorrachasButton;
+    private javax.swing.JToggleButton botaoDoisButton;
+    private javax.swing.JToggleButton botaoLapisButton;
+    private javax.swing.JToggleButton botaoLivrosButton;
+    private javax.swing.JToggleButton botaoMochilaButton;
+    private javax.swing.JToggleButton botaoQuatroButton;
+    private javax.swing.JToggleButton botaoTresButton;
+    private javax.swing.JToggleButton botaoUmButton;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JToggleButton jToggleButton1;
-    private javax.swing.JToggleButton jToggleButton2;
-    private javax.swing.JToggleButton jToggleButton3;
-    private javax.swing.JToggleButton jToggleButton4;
-    private javax.swing.JToggleButton jToggleButton6;
-    private javax.swing.JToggleButton jToggleButton7;
-    private javax.swing.JToggleButton jToggleButton8;
-    private javax.swing.JToggleButton jToggleButton9;
     // End of variables declaration//GEN-END:variables
 }
