@@ -7,83 +7,118 @@ package br.maua.t2._maua_tti101_t2_sistema_academico.telas;
 import br.maua.t2._maua_tti101_t2_sistema_academico.modelo.Usuario;
 import java.awt.Color;
 import javax.swing.BorderFactory;
+import javax.swing.JToggleButton;
 
 /**
  *
  * @author luisa
  */
 public class Fase2 extends javax.swing.JFrame {
-int selecionado = -1; 
-boolean botao_um = false;//0
-boolean botao_dois = false;
-boolean botao_tres = false;
-boolean botao_quatro = false;
-boolean uma_mochila = false;
-boolean dois_lapis = false;
-boolean tres_livros = false;
-boolean quatro_borrachas = false;
-public void verificar_estado(){
-    if (botao_um) {
-        botaoUmButton.setBorder(BorderFactory.createLineBorder(Color.green));
-        botaoUmButton.setEnabled(false);
+    private javax.swing.JToggleButton botãoAnteriorPressionado;
+
+    private boolean temDoisBotõesPressionados() {
+        javax.swing.JToggleButton[] buttons = {
+            botaoLivrosButton, 
+            botaoTresButton, 
+            botaoDoisButton, 
+            botaoLapisButton, 
+            botaoUmButton, 
+            botaoMochilaButton, 
+            botaoBorrachasButton, 
+            botaoQuatroButton
+        };
+
+
+        for (int i = 0; i < buttons.length; i++) {
+            for (int j = i + 1; j < buttons.length; j++) {
+                if (buttons[i].isSelected() && buttons[j].isSelected()) {
+                    return true;
+                }
+            }
+        }
+
+        return false;
     }
-    if (uma_mochila) {
-        botaoMochilaButton.setBorder(BorderFactory.createLineBorder(Color.green));
-        botaoMochilaButton.setEnabled(false);
+    
+    private boolean todosBotoõesEstãoDesativados() {
+        javax.swing.JToggleButton[] buttons = {
+            botaoLivrosButton, 
+            botaoTresButton, 
+            botaoDoisButton, 
+            botaoLapisButton, 
+            botaoUmButton, 
+            botaoMochilaButton, 
+            botaoBorrachasButton, 
+            botaoQuatroButton
+        };
+        
+        for (JToggleButton button : buttons) {
+            if (button.isEnabled()) {
+                return false;
+            }
+        }
+
+        return true;
     }
-    if (botao_dois) {
-        botaoDoisButton.setBorder(BorderFactory.createLineBorder(Color.green));
-        botaoDoisButton.setEnabled(false);
+
+    private void verifica_fase(javax.swing.JToggleButton botãoPressionado){
+        if (temDoisBotõesPressionados()) {
+            if ((botãoPressionado == botaoLivrosButton && botãoAnteriorPressionado == botaoTresButton) || (botãoAnteriorPressionado == botaoLivrosButton && botãoPressionado == botaoTresButton)) {
+                botãoPressionado.setEnabled(false);
+                botãoPressionado.setSelected(false);
+                botãoAnteriorPressionado.setSelected(false);
+                botãoAnteriorPressionado = null;
+            } else if ((botãoPressionado == botaoDoisButton && botãoAnteriorPressionado == botaoLapisButton) || (botãoAnteriorPressionado == botaoDoisButton && botãoPressionado == botaoLapisButton)) {
+                botãoPressionado.setEnabled(false);
+                botãoPressionado.setSelected(false);
+                botãoAnteriorPressionado.setSelected(false);
+                botãoAnteriorPressionado = null;
+            } else if ((botãoPressionado == botaoUmButton && botãoAnteriorPressionado == botaoMochilaButton) || (botãoAnteriorPressionado == botaoUmButton && botãoPressionado == botaoMochilaButton)) {
+                botãoPressionado.setEnabled(false);
+                botãoPressionado.setSelected(false);
+                botãoAnteriorPressionado.setSelected(false);
+                botãoAnteriorPressionado = null;
+            } else if ((botãoPressionado == botaoBorrachasButton && botãoAnteriorPressionado == botaoQuatroButton) || (botãoAnteriorPressionado == botaoBorrachasButton && botãoPressionado == botaoQuatroButton)) {
+                botãoPressionado.setEnabled(false);
+                botãoPressionado.setSelected(false);
+                botãoAnteriorPressionado.setSelected(false);
+                botãoAnteriorPressionado = null;
+            } else {
+                Usuario.pontuacao = Usuario.pontuacao - 25;
+                botãoAnteriorPressionado.setEnabled(true);
+                botãoAnteriorPressionado.setSelected(false);
+                botãoAnteriorPressionado = null;
+                botãoPressionado.setSelected(false);
+            }
+            
+            if (todosBotoõesEstãoDesativados()) {
+                Usuario.Fase2 = true;
+                if (!Usuario.Fase1) {
+                    new Fase1().setVisible(true);
+                    this.dispose();
+                } else if (!Usuario.Fase3) {
+                    new Fase3().setVisible(true);
+                    this.dispose();
+                } else if (!Usuario.Fase4) {
+                    new Fase4().setVisible(true);
+                    this.dispose();
+                } else {
+                    //TODO: Lançar pontuação no Banco
+                    new PontuacaoTela().setVisible(true);
+                    this.dispose();
+                }
+            }
+        } else {
+            botãoPressionado.setEnabled(false);
+            botãoAnteriorPressionado = botãoPressionado;
+        }
     }
-    if (dois_lapis) {
-        botaoLapisButton.setBorder(BorderFactory.createLineBorder(Color.green));
-        botaoLapisButton.setEnabled(false);
-    }
-    if (botao_tres) {
-        botaoTresButton.setBorder(BorderFactory.createLineBorder(Color.green));
-        botaoTresButton.setEnabled(false);
-    }
-    if (tres_livros) {
-        botaoLivrosButton.setBorder(BorderFactory.createLineBorder(Color.green));
-        botaoLivrosButton.setEnabled(false);
-    }
-    if (botao_quatro) {
-        botaoQuatroButton.setBorder(BorderFactory.createLineBorder(Color.green));
-        botaoQuatroButton.setEnabled(false);
-    }
-    if (quatro_borrachas) {
-        botaoBorrachasButton.setBorder(BorderFactory.createLineBorder(Color.green));
-        botaoBorrachasButton.setEnabled(false);
-    }
-}
-public void verifica_fase(){
-    if ((botao_um && !uma_mochila) || (botao_dois && !dois_lapis)|| (botao_tres && !tres_livros) || (botao_quatro && !quatro_borrachas)) {
-        Usuario.pontuacao = Usuario.pontuacao - 25;
-    }
-}
+    
     /**
      * Creates new form Fase2
      */
     public Fase2() {
         initComponents();
-    }
-    
-    private boolean avaliarSelecionado(int valor){
-        
-        if (selecionado == -1){
-            selecionado = valor;
-            return false;
-        }
-        //este primeiro if está verificando se ele foi selecionado, e apenas ele.
-        else if (valor %4 == selecionado %4 && valor != selecionado){
-            return true;
-        //este if verifica se os dois valores lógicos são iguais(selecionado e valor atual). caso sim, o valor ficará verdadeiro.
-        }
-        else {
-            selecionado = -1;
-            return false;
-        }
-        //se o segundo botão for selecionado errado, ele volta a lógica dos botões para o estado inicial.
     }
 
     /**
@@ -196,91 +231,35 @@ public void verifica_fase(){
     }// </editor-fold>//GEN-END:initComponents
 
     private void botaoLivrosButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoLivrosButtonActionPerformed
-        //três livros
-        int valor = 6;
-        if (!tres_livros && !botao_tres && avaliarSelecionado(valor)){
-            tres_livros = true;
-            botao_tres = true;
-            verificar_estado();
-        }
-        verifica_fase();
+        verifica_fase(botaoLivrosButton);
     }//GEN-LAST:event_botaoLivrosButtonActionPerformed
 
     private void botaoTresButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoTresButtonActionPerformed
-        //três
-        int valor = 2;
-        if (!tres_livros && !botao_tres && avaliarSelecionado(valor)){
-            tres_livros = true;
-            botao_tres = true;
-            verificar_estado();
-        }
-        verifica_fase();
+        verifica_fase(botaoTresButton);
     }//GEN-LAST:event_botaoTresButtonActionPerformed
 
     private void botaoDoisButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoDoisButtonActionPerformed
-        //dois
-         int valor = 1;
-        if (!botao_dois && !dois_lapis && avaliarSelecionado(valor)){
-            botao_dois = true;
-            dois_lapis = true;
-            verificar_estado();
-        } 
-        verifica_fase();
+        verifica_fase(botaoDoisButton);
     }//GEN-LAST:event_botaoDoisButtonActionPerformed
 
     private void botaoUmButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoUmButtonActionPerformed
-        //um
-        int valor = 0;
-        if (!botao_um && !uma_mochila && avaliarSelecionado(valor)){
-            botao_um = true;
-            uma_mochila = true;
-            verificar_estado();
-        } 
-        verifica_fase();
+        verifica_fase(botaoUmButton);
     }//GEN-LAST:event_botaoUmButtonActionPerformed
 
     private void botaoMochilaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoMochilaButtonActionPerformed
-        //uma mochila
-        int valor = 4;
-        if (!botao_um && !uma_mochila && avaliarSelecionado(valor)){
-            botao_um = true;
-            uma_mochila = true;
-            verificar_estado();
-        }
-        verifica_fase();
+        verifica_fase(botaoMochilaButton);
     }//GEN-LAST:event_botaoMochilaButtonActionPerformed
 
     private void botaoLapisButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoLapisButtonActionPerformed
-        //dois lápis
-        int valor = 5;
-        if (!botao_dois && !dois_lapis && avaliarSelecionado(valor)){
-            botao_dois = true;
-            dois_lapis = true;
-            verificar_estado();
-        }
-        verifica_fase();
+        verifica_fase(botaoLapisButton);
     }//GEN-LAST:event_botaoLapisButtonActionPerformed
 
     private void botaoBorrachasButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoBorrachasButtonActionPerformed
-        //quatro borrachas
-        int valor = 7;
-        if (!botao_quatro && !quatro_borrachas && avaliarSelecionado(valor)){
-            botao_quatro = true;
-            quatro_borrachas = true;
-            verificar_estado();
-        }
-        verifica_fase();
+        verifica_fase(botaoBorrachasButton);
     }//GEN-LAST:event_botaoBorrachasButtonActionPerformed
 
     private void botaoQuatroButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoQuatroButtonActionPerformed
-        //quatro
-        int valor = 3;
-        if (!botao_quatro && !quatro_borrachas && avaliarSelecionado(valor)){
-            botao_quatro = true;
-            quatro_borrachas = true;
-            verificar_estado();
-        }  
-        verifica_fase();
+        verifica_fase(botaoQuatroButton);
     }//GEN-LAST:event_botaoQuatroButtonActionPerformed
 
     /**
