@@ -40,6 +40,6 @@ public class ConnectionFactory {
        if (conexao != null)
            System.out.println("Conectou! :) ");
        else
-           System.out.println("Coiss ruins aconteceram...:( ");
+           System.out.println("Coisas ruins aconteceram...:( ");
    }
 }
