@@ -13,54 +13,22 @@ import javax.swing.BorderFactory;
  * @author luisa
  */
 public class Fase1 extends javax.swing.JFrame {
-int selecionado = -1; 
-boolean botao_amarelo = false;
-boolean botao_azul = false;
-boolean botao_vermelho = false;
-boolean botao_verde = false;
-boolean banana = false;
-boolean planta = false;
-boolean nuvem = false;
-boolean morango = false;
-
-public void verificar_estado(){
-    if (botao_amarelo) {
-        jToggleButton4.setBorder(BorderFactory.createLineBorder(Color.green));
-        jToggleButton4.setEnabled(false);
-    }
-    if (banana) {
-        jToggleButton8.setBorder(BorderFactory.createLineBorder(Color.green));
-        jToggleButton8.setEnabled(false);
-    }
-    if (botao_azul) {
-        jToggleButton3.setBorder(BorderFactory.createLineBorder(Color.green));
-        jToggleButton3.setEnabled(false);
-    }
-    if (nuvem) {
-        jToggleButton7.setBorder(BorderFactory.createLineBorder(Color.green));
-        jToggleButton7.setEnabled(false);
-    }
-    if (botao_vermelho) {
-        jToggleButton1.setBorder(BorderFactory.createLineBorder(Color.green));
-        jToggleButton1.setEnabled(false);
-    }
-    if (morango) {
-        jToggleButton6.setBorder(BorderFactory.createLineBorder(Color.green));
-        jToggleButton6.setEnabled(false);
-    }
-    if (botao_verde) {
-        jToggleButton2.setBorder(BorderFactory.createLineBorder(Color.green));
-        jToggleButton2.setEnabled(false);
-    }
-    if (planta) {
-        jToggleButton5.setBorder(BorderFactory.createLineBorder(Color.green));
-        jToggleButton5.setEnabled(false);
-    }
-}
 
 public void verifica_fase(){
-    if ((botao_vermelho && !morango) || (botao_amarelo && !banana)|| (botao_azul && !nuvem) || (botao_verde && !planta)) {
-        Usuario.pontuacao = Usuario.pontuacao - 25;
+    if (!botãoVermelhoButton.isEnabled() & !botãoVerdeButton.isEnabled() & !botãoAmareloButton.isEnabled() & !botãoAzulButton.isEnabled() ) {
+        if (!Usuario.Fase2) {
+            this.dispose();
+            new Fase2().setVisible(true);
+        } else if (!Usuario.Fase3) {
+            this.dispose();
+            new Fase3().setVisible(true);
+        } else if (!Usuario.Fase4) {
+            this.dispose();
+            new Fase4().setVisible(true);
+        } else {
+            this.dispose();
+            new PontuacaoTela().setVisible(true);
+        }
     }
 }
     /**
@@ -69,25 +37,6 @@ public void verifica_fase(){
     public Fase1() {
         initComponents();
     }
-
-    private boolean avaliarSelecionado(int valor){
-        
-        if (selecionado == -1){
-            selecionado = valor;
-            return false;
-        }
-        //este primeiro if está verificando se ele foi selecionado, e apenas ele.
-        else if (valor %4 == selecionado %4 && valor != selecionado){
-            return true;
-        //este if verifica se os dois valores lógicos são iguais(selecionado e valor atual). caso sim, o valor ficará verdadeiro.
-        }
-        else {
-            selecionado = -1;
-            return false;
-        }
-        //se o segundo botão for selecionado errado, ele volta a lógica dos botões para o estado inicial.
-    }
-
 
     /**
      * This me
@@ -99,197 +48,430 @@ public void verifica_fase(){
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jToggleButton1 = new javax.swing.JToggleButton();
-        jToggleButton2 = new javax.swing.JToggleButton();
-        jToggleButton3 = new javax.swing.JToggleButton();
-        jToggleButton4 = new javax.swing.JToggleButton();
-        jToggleButton5 = new javax.swing.JToggleButton();
-        jToggleButton6 = new javax.swing.JToggleButton();
-        jToggleButton7 = new javax.swing.JToggleButton();
-        jToggleButton8 = new javax.swing.JToggleButton();
-        jLabel1 = new javax.swing.JLabel();
+        botãoVermelhoButton = new javax.swing.JToggleButton();
+        botãoVerdeButton = new javax.swing.JToggleButton();
+        botãoAzulButton = new javax.swing.JToggleButton();
+        botãoAmareloButton = new javax.swing.JToggleButton();
+        botãoPlantaButton = new javax.swing.JToggleButton();
+        botãoMorangoButton = new javax.swing.JToggleButton();
+        botãoNuvemButton = new javax.swing.JToggleButton();
+        botãoBananaButton = new javax.swing.JToggleButton();
+        Fundo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
 
-        jToggleButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/vermelho.png"))); // NOI18N
-        jToggleButton1.setText("jToggleButton1");
-        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
+        botãoVermelhoButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/vermelho.png"))); // NOI18N
+        botãoVermelhoButton.setText("jToggleButton1");
+        botãoVermelhoButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton1ActionPerformed(evt);
+                botãoVermelhoButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(jToggleButton1);
-        jToggleButton1.setBounds(450, 70, 129, 122);
+        getContentPane().add(botãoVermelhoButton);
+        botãoVermelhoButton.setBounds(450, 70, 129, 122);
 
-        jToggleButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/verde.png"))); // NOI18N
-        jToggleButton2.setText("jToggleButton1");
-        jToggleButton2.addActionListener(new java.awt.event.ActionListener() {
+        botãoVerdeButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/verde.png"))); // NOI18N
+        botãoVerdeButton.setText("jToggleButton1");
+        botãoVerdeButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton2ActionPerformed(evt);
+                botãoVerdeButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(jToggleButton2);
-        jToggleButton2.setBounds(310, 70, 129, 122);
+        getContentPane().add(botãoVerdeButton);
+        botãoVerdeButton.setBounds(310, 70, 129, 122);
 
-        jToggleButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/azul.png"))); // NOI18N
-        jToggleButton3.setText("jToggleButton1");
-        jToggleButton3.addActionListener(new java.awt.event.ActionListener() {
+        botãoAzulButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/azul.png"))); // NOI18N
+        botãoAzulButton.setText("jToggleButton1");
+        botãoAzulButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton3ActionPerformed(evt);
+                botãoAzulButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(jToggleButton3);
-        jToggleButton3.setBounds(170, 70, 129, 122);
+        getContentPane().add(botãoAzulButton);
+        botãoAzulButton.setBounds(170, 70, 129, 122);
 
-        jToggleButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/amarelo.png"))); // NOI18N
-        jToggleButton4.setText("jToggleButton1");
-        jToggleButton4.addActionListener(new java.awt.event.ActionListener() {
+        botãoAmareloButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/amarelo.png"))); // NOI18N
+        botãoAmareloButton.setText("jToggleButton1");
+        botãoAmareloButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton4ActionPerformed(evt);
+                botãoAmareloButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(jToggleButton4);
-        jToggleButton4.setBounds(30, 70, 129, 122);
+        getContentPane().add(botãoAmareloButton);
+        botãoAmareloButton.setBounds(30, 70, 129, 122);
 
-        jToggleButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/planta.png"))); // NOI18N
-        jToggleButton5.setText("jToggleButton1");
-        jToggleButton5.addActionListener(new java.awt.event.ActionListener() {
+        botãoPlantaButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/planta.png"))); // NOI18N
+        botãoPlantaButton.setText("jToggleButton1");
+        botãoPlantaButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton5ActionPerformed(evt);
+                botãoPlantaButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(jToggleButton5);
-        jToggleButton5.setBounds(30, 220, 129, 122);
+        getContentPane().add(botãoPlantaButton);
+        botãoPlantaButton.setBounds(30, 220, 129, 122);
 
-        jToggleButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/m2.png"))); // NOI18N
-        jToggleButton6.setText("jToggleButton1");
-        jToggleButton6.addActionListener(new java.awt.event.ActionListener() {
+        botãoMorangoButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/m2.png"))); // NOI18N
+        botãoMorangoButton.setText("jToggleButton1");
+        botãoMorangoButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton6ActionPerformed(evt);
+                botãoMorangoButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(jToggleButton6);
-        jToggleButton6.setBounds(170, 220, 129, 122);
+        getContentPane().add(botãoMorangoButton);
+        botãoMorangoButton.setBounds(170, 220, 129, 122);
 
-        jToggleButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/nuvem.png"))); // NOI18N
-        jToggleButton7.setText("jToggleButton1");
-        jToggleButton7.addActionListener(new java.awt.event.ActionListener() {
+        botãoNuvemButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/nuvem.png"))); // NOI18N
+        botãoNuvemButton.setText("jToggleButton1");
+        botãoNuvemButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton7ActionPerformed(evt);
+                botãoNuvemButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(jToggleButton7);
-        jToggleButton7.setBounds(310, 220, 129, 122);
+        getContentPane().add(botãoNuvemButton);
+        botãoNuvemButton.setBounds(310, 220, 129, 122);
 
-        jToggleButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/banana.png"))); // NOI18N
-        jToggleButton8.setText("jToggleButton1");
-        jToggleButton8.addActionListener(new java.awt.event.ActionListener() {
+        botãoBananaButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/banana.png"))); // NOI18N
+        botãoBananaButton.setText("jToggleButton1");
+        botãoBananaButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton8ActionPerformed(evt);
+                botãoBananaButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(jToggleButton8);
-        jToggleButton8.setBounds(450, 220, 129, 122);
+        getContentPane().add(botãoBananaButton);
+        botãoBananaButton.setBounds(450, 220, 129, 122);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/branco fundo.png"))); // NOI18N
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(0, 0, 600, 460);
+        Fundo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/branco fundo.png"))); // NOI18N
+        getContentPane().add(Fundo);
+        Fundo.setBounds(0, 0, 600, 460);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
-        // vermelho
-        int valor = 3;
-        if (!botao_vermelho && !morango && avaliarSelecionado(valor)){
-            botao_vermelho = true;
-            morango = true;
-            verificar_estado();
-        // ele está verificando se os botões de mesmas cores já foram acertados
-        //se não foram vai se tornar verdadeiro, e deixar o botão como selecionado vizualmente
+    private void botãoVermelhoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botãoVermelhoButtonActionPerformed
+        boolean estavaResolvidoVerde = !(botãoVerdeButton.isEnabled());
+        boolean estavaResolvidoAmarelo = !(botãoAmareloButton.isEnabled());
+        boolean estavaResolvidoAzul = !(botãoAzulButton.isEnabled());
+        if (botãoVermelhoButton.isSelected()) {
+            botãoVermelhoButton.setBorder(BorderFactory.createLineBorder(Color.green, 5));
+            System.out.println(botãoVerdeButton.isEnabled());
+            if (!estavaResolvidoVerde) {
+                System.out.println("Batata");
+                botãoVerdeButton.setEnabled(false);
+            }
+            if (!estavaResolvidoAmarelo) {
+                botãoAmareloButton.setEnabled(false);
+            }
+            if (!estavaResolvidoAzul) {
+                botãoAzulButton.setEnabled(false);
+            }
+        }
+        if (botãoVermelhoButton.isSelected()&& botãoMorangoButton.isSelected()){
+            botãoVermelhoButton.setEnabled(false);
+            botãoMorangoButton.setEnabled(false);
+        } else {
+            if (botãoPlantaButton.isSelected() || botãoNuvemButton.isSelected() || botãoBananaButton.isSelected()) {
+                botãoPlantaButton.setSelected(false);
+                botãoNuvemButton.setSelected(false);
+                botãoBananaButton.setSelected(false);
+                botãoVermelhoButton.setSelected(false);
+                Usuario.pontuacao = Usuario.pontuacao - 25;
+            }
+        }
+        if (!estavaResolvidoVerde) {
+            botãoVerdeButton.setEnabled(true);
+        }
+        if (!estavaResolvidoAmarelo) {
+            botãoAmareloButton.setEnabled(true);
+        }
+        if (!estavaResolvidoAzul) {
+            botãoAzulButton.setEnabled(true);
         }
         verifica_fase();
-    }//GEN-LAST:event_jToggleButton1ActionPerformed
+    }//GEN-LAST:event_botãoVermelhoButtonActionPerformed
 
-    private void jToggleButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton2ActionPerformed
-        // verde
-        int valor = 2;
-        if (!botao_verde && !planta && avaliarSelecionado(valor)){
-            botao_verde = true;
-            planta = true;
-            verificar_estado();
+    private void botãoVerdeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botãoVerdeButtonActionPerformed
+        boolean estavaResolvidoVermelho = !(botãoVermelhoButton.isEnabled());
+        boolean estavaResolvidoAmarelo = !(botãoAmareloButton.isEnabled());
+        boolean estavaResolvidoAzul = !(botãoAzulButton.isEnabled());
+        if (botãoVerdeButton.isSelected()) {
+            botãoVerdeButton.setBorder(BorderFactory.createLineBorder(Color.green, 5));
+            if (!estavaResolvidoVermelho) {
+                botãoVermelhoButton.setEnabled(false);
+            }
+            if (!estavaResolvidoAmarelo) {
+                botãoAmareloButton.setEnabled(false);
+            }
+            if (!estavaResolvidoAzul) {
+                botãoAzulButton.setEnabled(false);
+            }
+        }
+        if (botãoVerdeButton.isSelected()&& botãoPlantaButton.isSelected()){
+            botãoVerdeButton.setEnabled(false);
+            botãoPlantaButton.setEnabled(false);
+        } else {
+            if (botãoMorangoButton.isSelected() || botãoNuvemButton.isSelected() || botãoBananaButton.isSelected()) {
+                botãoMorangoButton.setSelected(false);
+                botãoNuvemButton.setSelected(false);
+                botãoBananaButton.setSelected(false);
+                botãoVerdeButton.setSelected(false);
+                Usuario.pontuacao = Usuario.pontuacao - 25;
+            }
+        }
+        if (!estavaResolvidoVermelho) {
+            botãoVermelhoButton.setEnabled(true);
+        }
+        if (!estavaResolvidoAmarelo) {
+            botãoAmareloButton.setEnabled(true);
+        }
+        if (!estavaResolvidoAzul) {
+            botãoAzulButton.setEnabled(true);
+
         } 
         verifica_fase();
-    }//GEN-LAST:event_jToggleButton2ActionPerformed
+    }//GEN-LAST:event_botãoVerdeButtonActionPerformed
 
-    private void jToggleButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton3ActionPerformed
-        // azul
-        int valor = 1;
-        if (!botao_azul && !nuvem && avaliarSelecionado(valor)){
-            botao_azul = true;
-            nuvem = true;
-            verificar_estado();
+    private void botãoAzulButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botãoAzulButtonActionPerformed
+        boolean estavaResolvidoVermelho = !(botãoVermelhoButton.isEnabled());
+        boolean estavaResolvidoAmarelo = !(botãoAmareloButton.isEnabled());
+        boolean estavaResolvidoVerde = !(botãoVerdeButton.isEnabled());
+        if (botãoAzulButton.isSelected()) {
+            botãoAzulButton.setBorder(BorderFactory.createLineBorder(Color.green, 5));
+            if (!estavaResolvidoVermelho) {
+                botãoVermelhoButton.setEnabled(false);
+            }
+            if (!estavaResolvidoAmarelo) {
+                botãoAmareloButton.setEnabled(false);
+            }
+            if (!estavaResolvidoVerde) {
+                botãoVerdeButton.setEnabled(false);
+            }
+        }
+        if (botãoAzulButton.isSelected()&& botãoNuvemButton.isSelected()){
+            botãoAzulButton.setEnabled(false);
+            botãoNuvemButton.setEnabled(false);
+        } else {
+            if (botãoMorangoButton.isSelected() || botãoPlantaButton.isSelected() || botãoBananaButton.isSelected()) {
+                botãoMorangoButton.setSelected(false);
+                botãoPlantaButton.setSelected(false);
+                botãoBananaButton.setSelected(false);
+                botãoAzulButton.setSelected(false);
+                Usuario.pontuacao = Usuario.pontuacao - 25;
+            }
+        }
+        if (!estavaResolvidoVermelho) {
+            botãoVermelhoButton.setEnabled(true);
+        }
+        if (!estavaResolvidoAmarelo) {
+            botãoAmareloButton.setEnabled(true);
+        }
+        if (!estavaResolvidoVerde) {
+            botãoVerdeButton.setEnabled(true);
+
         }  
         verifica_fase();
-    }//GEN-LAST:event_jToggleButton3ActionPerformed
+    }//GEN-LAST:event_botãoAzulButtonActionPerformed
 
-    private void jToggleButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton4ActionPerformed
-        //amarelo
-        int valor = 0;
-        if (!botao_amarelo && !banana && avaliarSelecionado(valor)){
-            botao_amarelo = true;
-            banana = true;
-            verificar_estado();
+    private void botãoAmareloButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botãoAmareloButtonActionPerformed
+        boolean estavaResolvidoVermelho = !(botãoVermelhoButton.isEnabled());
+        boolean estavaResolvidoAzul = !(botãoAzulButton.isEnabled());
+        boolean estavaResolvidoVerde = !(botãoVerdeButton.isEnabled());
+        if (botãoAmareloButton.isSelected()) {
+            botãoAmareloButton.setBorder(BorderFactory.createLineBorder(Color.green, 5));
+            if (!estavaResolvidoVermelho) {
+                botãoVermelhoButton.setEnabled(false);
+            }
+            if (!estavaResolvidoAzul) {
+                botãoAzulButton.setEnabled(false);
+            }
+            if (!estavaResolvidoVerde) {
+                botãoVerdeButton.setEnabled(false);
+            }
+        }
+        if (botãoAmareloButton.isSelected()&& botãoBananaButton.isSelected()){
+            botãoAmareloButton.setEnabled(false);
+            botãoBananaButton.setEnabled(false);
+        } else {
+            if (botãoMorangoButton.isSelected() || botãoPlantaButton.isSelected() || botãoNuvemButton.isSelected()) {
+                botãoMorangoButton.setSelected(false);
+                botãoPlantaButton.setSelected(false);
+                botãoNuvemButton.setSelected(false);
+                botãoAmareloButton.setSelected(false);
+                Usuario.pontuacao = Usuario.pontuacao - 25;
+            }
+        }
+        if (!estavaResolvidoVermelho) {
+            botãoVermelhoButton.setEnabled(true);
+        }
+        if (!estavaResolvidoAzul) {
+            botãoAmareloButton.setEnabled(true);
+        }
+        if (!estavaResolvidoVerde) {
+            botãoVerdeButton.setEnabled(true);
         }
         verifica_fase();
-    }//GEN-LAST:event_jToggleButton4ActionPerformed
+    }//GEN-LAST:event_botãoAmareloButtonActionPerformed
 
-    private void jToggleButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton5ActionPerformed
-        // planta verde
-        int valor = 6;
-        if (!botao_vermelho && !morango && avaliarSelecionado(valor)){
-            botao_vermelho = true;
-            morango = true;
-            verificar_estado();
+    private void botãoPlantaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botãoPlantaButtonActionPerformed
+        boolean estavaResolvidoRespostaVermelho = !(botãoVermelhoButton.isEnabled());
+        boolean estavaResolvidoRespostaAmarelo = !(botãoAmareloButton.isEnabled());
+        boolean estavaResolvidoRespostaAzul = !(botãoAzulButton.isEnabled());
+        if (botãoPlantaButton.isSelected()) {
+            botãoPlantaButton.setBorder(BorderFactory.createLineBorder(Color.green, 5));
+            if (!estavaResolvidoRespostaVermelho) {
+                botãoMorangoButton.setEnabled(false);
+            }
+            if (!estavaResolvidoRespostaAmarelo) {
+                botãoBananaButton.setEnabled(false);
+            }
+            if (!estavaResolvidoRespostaAzul) {
+                botãoNuvemButton.setEnabled(false);
+            }
         }
-        verifica_fase();
-    }//GEN-LAST:event_jToggleButton5ActionPerformed
-
-    private void jToggleButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton6ActionPerformed
-        // morango
-        int valor = 7;
-         if (!botao_vermelho && !morango && avaliarSelecionado(valor)){
-            botao_vermelho = true;
-            morango = true;
-            verificar_estado();
-        // ele está verificando se os botões de mesmas cores já foram acertados
-        //se não foram vai se tornar verdadeiro, e deixar o botão como selecionado vizualmente
+        if (botãoPlantaButton.isSelected()&& botãoVerdeButton.isSelected()){
+            botãoVerdeButton.setEnabled(false);
+            botãoPlantaButton.setEnabled(false);
+        } else {
+            if (botãoVermelhoButton.isSelected() || botãoAzulButton.isSelected() || botãoAmareloButton.isSelected()) {
+                botãoVermelhoButton.setSelected(false);
+                botãoAzulButton.setSelected(false);
+                botãoAmareloButton.setSelected(false);
+                botãoPlantaButton.setSelected(false);
+                Usuario.pontuacao = Usuario.pontuacao - 25;
+            }
+        }
+        if (!estavaResolvidoRespostaVermelho) {
+            botãoVermelhoButton.setEnabled(true);
+        }
+        if (!estavaResolvidoRespostaAmarelo) {
+            botãoAmareloButton.setEnabled(true);
+        }
+        if (!estavaResolvidoRespostaAzul) {
+            botãoAzulButton.setEnabled(true);
+            
         } 
         verifica_fase();
-    }//GEN-LAST:event_jToggleButton6ActionPerformed
+    }//GEN-LAST:event_botãoPlantaButtonActionPerformed
 
-    private void jToggleButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton7ActionPerformed
-        //nuvem
-        int valor = 5;
-        if (!botao_azul && !nuvem && avaliarSelecionado(valor)){
-            botao_azul = true;
-            nuvem = true;
-            verificar_estado();
-        } 
-        verifica_fase();
-    }//GEN-LAST:event_jToggleButton7ActionPerformed
-
-    private void jToggleButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton8ActionPerformed
-        //banana
-        int valor = 4;
-        if (!botao_amarelo && !banana && avaliarSelecionado(valor)){
-            botao_amarelo = true;
-            banana = true;
-            verificar_estado();
+    private void botãoMorangoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botãoMorangoButtonActionPerformed
+         boolean estavaResolvidoRespostaVerde = !(botãoPlantaButton.isEnabled());
+        boolean estavaResolvidoRespostaAmarelo = !(botãoBananaButton.isEnabled());
+        boolean estavaResolvidoRespostaAzul = !(botãoNuvemButton.isEnabled());
+        if (botãoMorangoButton.isSelected()) {
+            botãoMorangoButton.setBorder(BorderFactory.createLineBorder(Color.green, 5));
+            if (!estavaResolvidoRespostaVerde) {
+                botãoPlantaButton.setEnabled(false);
+            }
+            if (!estavaResolvidoRespostaAmarelo) {
+                botãoBananaButton.setEnabled(false);
+            }
+            if (!estavaResolvidoRespostaAzul) {
+                botãoNuvemButton.setEnabled(false);
+            }
+        }
+        if (botãoMorangoButton.isSelected()&& botãoVermelhoButton.isSelected()){
+            botãoVermelhoButton.setEnabled(false);
+            botãoMorangoButton.setEnabled(false);
+        } else {
+            if (botãoVerdeButton.isSelected() || botãoAzulButton.isSelected() || botãoAmareloButton.isSelected()) {
+                botãoVerdeButton.setSelected(false);
+                botãoAzulButton.setSelected(false);
+                botãoAmareloButton.setSelected(false);
+                botãoMorangoButton.setSelected(false);
+                Usuario.pontuacao = Usuario.pontuacao - 25;
+            }
+        }
+        if (!estavaResolvidoRespostaVerde) {
+            botãoVerdeButton.setEnabled(true);
+        }
+        if (!estavaResolvidoRespostaAmarelo) {
+            botãoAmareloButton.setEnabled(true);
+        }
+        if (!estavaResolvidoRespostaAzul) {
+            botãoAzulButton.setEnabled(true);
         }
         verifica_fase();
-    }//GEN-LAST:event_jToggleButton8ActionPerformed
+    }//GEN-LAST:event_botãoMorangoButtonActionPerformed
+
+    private void botãoNuvemButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botãoNuvemButtonActionPerformed
+        boolean estavaResolvidoRespostaVerde = !(botãoPlantaButton.isEnabled());
+        boolean estavaResolvidoRespostaAmarelo = !(botãoBananaButton.isEnabled());
+        boolean estavaResolvidoRespostaVermelho = !(botãoMorangoButton.isEnabled());
+        if (botãoNuvemButton.isSelected()) {
+            botãoNuvemButton.setBorder(BorderFactory.createLineBorder(Color.green, 5));
+            if (!estavaResolvidoRespostaVerde) {
+                botãoPlantaButton.setEnabled(false);
+            }
+            if (!estavaResolvidoRespostaAmarelo) {
+                botãoBananaButton.setEnabled(false);
+            }
+            if (!estavaResolvidoRespostaVermelho) {
+                botãoMorangoButton.setEnabled(false);
+            }
+        }
+        if (botãoNuvemButton.isSelected()&& botãoAzulButton.isSelected()){
+            botãoAzulButton.setEnabled(false);
+            botãoNuvemButton.setEnabled(false);
+        } else {
+            if (botãoVerdeButton.isSelected() || botãoVermelhoButton.isSelected() || botãoAmareloButton.isSelected()) {
+                botãoVerdeButton.setSelected(false);
+                botãoVermelhoButton.setSelected(false);
+                botãoAmareloButton.setSelected(false);
+                botãoNuvemButton.setSelected(false);
+                Usuario.pontuacao = Usuario.pontuacao - 25;
+            }
+        }
+        if (!estavaResolvidoRespostaVerde) {
+            botãoVerdeButton.setEnabled(true);
+        }
+        if (!estavaResolvidoRespostaAmarelo) {
+            botãoAmareloButton.setEnabled(true);
+        }
+        if (!estavaResolvidoRespostaVermelho) {
+            botãoAzulButton.setEnabled(true);
+        }
+        verifica_fase();
+    }//GEN-LAST:event_botãoNuvemButtonActionPerformed
+
+    private void botãoBananaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botãoBananaButtonActionPerformed
+        boolean estavaResolvidoRespostaVerde = !(botãoPlantaButton.isEnabled());
+        boolean estavaResolvidoRespostaVermelho = !(botãoMorangoButton.isEnabled());
+        boolean estavaResolvidoRespostaAzul = !(botãoNuvemButton.isEnabled());
+        if (botãoBananaButton.isSelected()) {
+            botãoBananaButton.setBorder(BorderFactory.createLineBorder(Color.green, 5));
+            if (!estavaResolvidoRespostaVerde) {
+                botãoPlantaButton.setEnabled(false);
+            }
+            if (!estavaResolvidoRespostaVermelho) {
+                botãoMorangoButton.setEnabled(false);
+            }
+            if (!estavaResolvidoRespostaAzul) {
+                botãoNuvemButton.setEnabled(false);
+            }
+        }
+        if (botãoBananaButton.isSelected()&& botãoAmareloButton.isSelected()){
+            botãoAmareloButton.setEnabled(false);
+            botãoBananaButton.setEnabled(false);
+        } else {
+            if (botãoVerdeButton.isSelected() || botãoAzulButton.isSelected() || botãoVermelhoButton.isSelected()) {
+                botãoVerdeButton.setSelected(false);
+                botãoAzulButton.setSelected(false);
+                botãoVermelhoButton.setSelected(false);
+                botãoBananaButton.setSelected(false);
+                Usuario.pontuacao = Usuario.pontuacao - 25;
+            }
+        }
+        if (!estavaResolvidoRespostaVerde) {
+            botãoVerdeButton.setEnabled(true);
+        }
+        if (!estavaResolvidoRespostaVermelho) {
+            botãoVermelhoButton.setEnabled(true);
+        }
+        if (!estavaResolvidoRespostaAzul) {
+            botãoAzulButton.setEnabled(true);
+        }
+        verifica_fase();
+    }//GEN-LAST:event_botãoBananaButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -327,14 +509,14 @@ public void verifica_fase(){
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JToggleButton jToggleButton1;
-    private javax.swing.JToggleButton jToggleButton2;
-    private javax.swing.JToggleButton jToggleButton3;
-    private javax.swing.JToggleButton jToggleButton4;
-    private javax.swing.JToggleButton jToggleButton5;
-    private javax.swing.JToggleButton jToggleButton6;
-    private javax.swing.JToggleButton jToggleButton7;
-    private javax.swing.JToggleButton jToggleButton8;
+    private javax.swing.JLabel Fundo;
+    private javax.swing.JToggleButton botãoAmareloButton;
+    private javax.swing.JToggleButton botãoAzulButton;
+    private javax.swing.JToggleButton botãoBananaButton;
+    private javax.swing.JToggleButton botãoMorangoButton;
+    private javax.swing.JToggleButton botãoNuvemButton;
+    private javax.swing.JToggleButton botãoPlantaButton;
+    private javax.swing.JToggleButton botãoVerdeButton;
+    private javax.swing.JToggleButton botãoVermelhoButton;
     // End of variables declaration//GEN-END:variables
 }

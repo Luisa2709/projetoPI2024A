@@ -59,7 +59,7 @@ public class UsuarioDAO {
     }
     public String[] getTurmas() throws Exception{
         //1. Especificar o comando SQL (SELECT)
-        String sql = "SELECT DISTINCT SENHA FROM USUARIOS WHERE PROFESSOR = 0 ORDER BY ASC;";
+        String sql = "SELECT DISTINCT SENHA FROM USUARIOS WHERE PROFESSOR = 0 ORDER BY SENHA ASC;";
         //2. Estabelecer uma conexao com o banco
         Connection conexao = new ConnectionFactory().obterConexao();
         //3. Preparar o comando
@@ -67,17 +67,56 @@ public class UsuarioDAO {
         //4. Executar o comando SQL
         ResultSet rs = ps.executeQuery();
         //5. Inicia array(lista) String 
-        String[] turmas = {};
+        String[] turmas = new String[1000];
         //6. Contagem
         int i = 0;
         //7. Laço que vai adicionar cada senha a lista
         while (rs.next()){
-            turmas[i++] = rs.getString(1);
+            String turma = rs.getString("SENHA");
+            turmas[i] = turma;
+            i++;
         }
         //8. Fecha as conexoes 
         rs.close();
         conexao.close(); 
         //9. Devolve as turmas
         return turmas;
+    }
+    
+    public int buscarTamanhoTurma (String Turma) throws Exception{
+         //1. Especificar o comando SQL (SELECT)
+        String sql = "SELECT COUNT(ID_USUARIO) FROM PONTUACAO;";
+        //2. Estabelecer uma conexao com o banco
+        Connection conexao = new ConnectionFactory().obterConexao();
+        //3. Preparar o comando
+        PreparedStatement ps = conexao.prepareStatement(sql);
+        //4. Executar o comando SQL
+        ResultSet rs = ps.executeQuery();
+        //5. avanca para o primeiro resultado e retorna a quantidde de pessoas da turma
+        rs.next();
+        return rs.getInt(1);
+    }
+    public String[][] buscarTurma(String turma) throws Exception{
+        String[][] todaTurma = new String[buscarTamanhoTurma(turma)][3];
+        
+        String sql = "SELECT U.NOME, P.PONTUACAO, P.DIA_HORARIO FROM USUARIOS AS U INNER JOIN PONTUACAO AS P ON U.ID_USUARIO = P.ID_USUARIO WHERE U.SENHA = '"+turma+"' ORDER BY P.PONTUACAO DESC;";
+        //2. Estabelecer uma conexao com o banco
+        Connection conexao = new ConnectionFactory().obterConexao();
+        //3. Preparar o comando
+        PreparedStatement ps = conexao.prepareStatement(sql);
+        //4. Executar o comando SQL
+        ResultSet rs = ps.executeQuery();
+        //6. Contagem
+        int i = 0;
+        //7. Laço que vai adicionar cada nome, pontuacao e data/hora a lista
+        while (rs.next()){
+            String nome =  rs.getString(1);
+            String pontuacao = Integer.toString(rs.getInt(2));
+            String data =  rs.getDate(3).toString();
+            todaTurma[i][0] = nome;
+            todaTurma[i][1] = pontuacao;
+            todaTurma[i][2] = data;
+        }
+        return todaTurma;
     }
 }

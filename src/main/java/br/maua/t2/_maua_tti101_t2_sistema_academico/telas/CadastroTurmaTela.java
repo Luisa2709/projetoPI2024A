@@ -31,9 +31,9 @@ public class CadastroTurmaTela extends javax.swing.JFrame {
     private void initComponents() {
 
         jTextField2 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jPasswordField1 = new javax.swing.JPasswordField();
-        jTextField1 = new javax.swing.JTextField();
+        okButton = new javax.swing.JButton();
+        senhaButton = new javax.swing.JPasswordField();
+        nomeParaCadastroButton = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -45,34 +45,34 @@ public class CadastroTurmaTela extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(null);
 
-        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton1.setText("OK");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        okButton.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        okButton.setText("OK");
+        okButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                okButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1);
-        jButton1.setBounds(60, 270, 210, 70);
+        getContentPane().add(okButton);
+        okButton.setBounds(60, 270, 210, 70);
 
-        jPasswordField1.setToolTipText("");
-        jPasswordField1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1), "Senha:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 12))); // NOI18N
-        jPasswordField1.addActionListener(new java.awt.event.ActionListener() {
+        senhaButton.setToolTipText("");
+        senhaButton.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1), "Senha:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 12))); // NOI18N
+        senhaButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jPasswordField1ActionPerformed(evt);
+                senhaButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(jPasswordField1);
-        jPasswordField1.setBounds(50, 120, 450, 80);
+        getContentPane().add(senhaButton);
+        senhaButton.setBounds(50, 120, 450, 80);
 
-        jTextField1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1), "Nome para cadastro:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 12))); // NOI18N
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        nomeParaCadastroButton.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1), "Nome para cadastro:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 12))); // NOI18N
+        nomeParaCadastroButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                nomeParaCadastroButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField1);
-        jTextField1.setBounds(50, 20, 450, 81);
+        getContentPane().add(nomeParaCadastroButton);
+        nomeParaCadastroButton.setBounds(50, 20, 450, 81);
         getContentPane().add(jLabel3);
         jLabel3.setBounds(27, 330, 100, 60);
 
@@ -97,17 +97,17 @@ public class CadastroTurmaTela extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
+    private void senhaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_senhaButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jPasswordField1ActionPerformed
+    }//GEN-LAST:event_senhaButtonActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void okButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okButtonActionPerformed
         
       try{
         //1. pegar o login digitado pelo usuario
-        var login = jTextField1.getText();
+        var login = nomeParaCadastroButton.getText();
         //2. pegar a senha digitada pelo usuario
-        var senha = new String(jPasswordField1.getPassword());
+        var senha = new String(senhaButton.getPassword());
         var usuario = new Usuario();//cria o usuario no pc
         usuario.setLogin(login);
         usuario.setSenha(senha);
@@ -127,11 +127,11 @@ public class CadastroTurmaTela extends javax.swing.JFrame {
             System.out.println(e);
       }
 
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_okButtonActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void nomeParaCadastroButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nomeParaCadastroButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_nomeParaCadastroButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -169,14 +169,14 @@ public class CadastroTurmaTela extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField nomeParaCadastroButton;
+    private javax.swing.JButton okButton;
+    private javax.swing.JPasswordField senhaButton;
     // End of variables declaration//GEN-END:variables
 }
