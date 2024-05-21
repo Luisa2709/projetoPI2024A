@@ -164,15 +164,11 @@ public class PontuacaoProfessor extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-<<<<<<< Updated upstream
-                //new PontuacaoProfessor().setVisible(true);
-=======
                 try {
                     new PontuacaoProfessor().setVisible(true);
                 } catch (Exception ex) {
                     Logger.getLogger(PontuacaoProfessor.class.getName()).log(Level.SEVERE, null, ex);
                 }
->>>>>>> Stashed changes
             }
         });
     }

@@ -7,83 +7,119 @@ package br.maua.t2._maua_tti101_t2_sistema_academico.telas;
 import br.maua.t2._maua_tti101_t2_sistema_academico.modelo.Usuario;
 import java.awt.Color;
 import javax.swing.BorderFactory;
+import javax.swing.JToggleButton;
 
 /**
  *
  * @author luisa
  */
 public class Fase3 extends javax.swing.JFrame{
-int selecionado = -1; 
-boolean peixe = false;//0
-boolean abelha = false;
-boolean leao = false;
-boolean macaco = false;
-boolean colmeia = false;
-boolean mar = false;
-boolean floresta = false;
-boolean selva = false;
-public void verificar_estado(){
-    if (peixe) {
-        botaoPeixeButton.setBorder(BorderFactory.createLineBorder(Color.green));
-        botaoPeixeButton.setEnabled(false);
+    private javax.swing.JToggleButton botãoAnteriorPressionado;
+
+    private boolean temDoisBotõesPressionados() {
+        javax.swing.JToggleButton[] buttons = {
+            botaoMacacoButton, 
+            botaoFlorestaButton, 
+            botaoLeaoButton, 
+            botaoSelvaButton, 
+            botaoPeixeButton, 
+            botaoMarButton, 
+            botaoColmeiaButton, 
+            botaoAbelhaButton
+        };
+
+
+        for (int i = 0; i < buttons.length; i++) {
+            for (int j = i + 1; j < buttons.length; j++) {
+                if (buttons[i].isSelected() && buttons[j].isSelected()) {
+                    return true;
+                }
+            }
+        }
+
+        return false;
     }
-    if (abelha) {
-        botaoAbelhaButton.setBorder(BorderFactory.createLineBorder(Color.green));
-        botaoAbelhaButton.setEnabled(false);
+    
+    private boolean todosBotoõesEstãoDesativados() {
+        javax.swing.JToggleButton[] buttons = {
+            botaoMacacoButton, 
+            botaoFlorestaButton, 
+            botaoLeaoButton, 
+            botaoSelvaButton, 
+            botaoPeixeButton, 
+            botaoMarButton, 
+            botaoColmeiaButton, 
+            botaoAbelhaButton
+        };
+        
+        for (JToggleButton button : buttons) {
+            if (button.isEnabled()) {
+                return false;
+            }
+        }
+
+        return true;
     }
-    if (leao) {
-        botaoLeaoButton.setBorder(BorderFactory.createLineBorder(Color.green));
-        botaoLeaoButton.setEnabled(false);
+
+    private void verifica_fase(javax.swing.JToggleButton botãoPressionado){
+        if (temDoisBotõesPressionados()) {
+            if ((botãoPressionado == botaoMacacoButton && botãoAnteriorPressionado == botaoFlorestaButton) || (botãoAnteriorPressionado == botaoMacacoButton && botãoPressionado == botaoFlorestaButton)) {
+                botãoPressionado.setEnabled(false);
+                botãoPressionado.setSelected(false);
+                botãoAnteriorPressionado.setSelected(false);
+                botãoAnteriorPressionado = null;
+            } else if ((botãoPressionado == botaoLeaoButton && botãoAnteriorPressionado == botaoSelvaButton) || (botãoAnteriorPressionado == botaoLeaoButton && botãoPressionado == botaoSelvaButton)) {
+                botãoPressionado.setEnabled(false);
+                botãoPressionado.setSelected(false);
+                botãoAnteriorPressionado.setSelected(false);
+                botãoAnteriorPressionado = null;
+            } else if ((botãoPressionado == botaoPeixeButton && botãoAnteriorPressionado == botaoMarButton) || (botãoAnteriorPressionado == botaoPeixeButton && botãoPressionado == botaoMarButton)) {
+                botãoPressionado.setEnabled(false);
+                botãoPressionado.setSelected(false);
+                botãoAnteriorPressionado.setSelected(false);
+                botãoAnteriorPressionado = null;
+            } else if ((botãoPressionado == botaoColmeiaButton && botãoAnteriorPressionado == botaoAbelhaButton) || (botãoAnteriorPressionado == botaoColmeiaButton && botãoPressionado == botaoAbelhaButton)) {
+                botãoPressionado.setEnabled(false);
+                botãoPressionado.setSelected(false);
+                botãoAnteriorPressionado.setSelected(false);
+                botãoAnteriorPressionado = null;
+            } else {
+                Usuario.pontuacao = Usuario.pontuacao - 25;
+                botãoAnteriorPressionado.setEnabled(true);
+                botãoAnteriorPressionado.setSelected(false);
+                botãoAnteriorPressionado = null;
+                botãoPressionado.setSelected(false);
+            }
+            
+            if (todosBotoõesEstãoDesativados()) {
+                Usuario.Fase3 = true;
+                if (!Usuario.Fase1) {
+                    new Fase1().setVisible(true);
+                    this.dispose();
+                } else if (!Usuario.Fase2) {
+                    new Fase2().setVisible(true);
+                    this.dispose();
+                } else if (!Usuario.Fase4) {
+                    new Fase4().setVisible(true);
+                    this.dispose();
+                } else {
+                    //TODO: Lançar pontuação no Banco
+                    new PontuacaoTela().setVisible(true);
+                    this.dispose();
+                }
+            }
+        } else {
+            botãoPressionado.setEnabled(false);
+            botãoAnteriorPressionado = botãoPressionado;
+        }
     }
-    if (mar) {
-        botaoMarButton.setBorder(BorderFactory.createLineBorder(Color.green));
-        botaoMarButton.setEnabled(false);
-    }
-    if (selva) {
-        botaoSelvaButton.setBorder(BorderFactory.createLineBorder(Color.green));
-        botaoSelvaButton.setEnabled(false);
-    }
-    if (macaco) {
-        botaoMacacoButton.setBorder(BorderFactory.createLineBorder(Color.green));
-        botaoMacacoButton.setEnabled(false);
-    }
-    if (floresta) {
-        botaoFlorestaButton.setBorder(BorderFactory.createLineBorder(Color.green));
-        botaoFlorestaButton.setEnabled(false);
-    }
-    if (colmeia) {
-        botaoColmeiaButton.setBorder(BorderFactory.createLineBorder(Color.green));
-        botaoColmeiaButton.setEnabled(false);
-    }
-}
-public void verifica_fase(){
-    if ((peixe && !mar) || (abelha && !colmeia)|| (leao && !floresta) || (macaco && !selva)) {
-        Usuario.pontuacao = Usuario.pontuacao - 25;
-    }
-}
+
     /**
      * Creates new form Fase3
      */
     public Fase3(){
         initComponents();       
 }
-    private boolean avaliarSelecionado(int valor){
-        
-        if (selecionado == -1){
-            selecionado = valor;
-            return false;
-        }
-        //este primeiro if está verificando se ele foi selecionado, e apenas ele.
-        else if (valor %4 == selecionado %4 && valor != selecionado){
-            return true;
-        //este if verifica se os dois valores lógicos são iguais(selecionado e valor atual). caso sim, o valor ficará verdadeiro.
-        }
-        else {
-            selecionado = -1;
-            return false;
-        }
-        //se o segundo botão for selecionado errado, ele volta a lógica dos botões para o estado inicial.
-    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -195,91 +231,35 @@ public void verifica_fase(){
     }// </editor-fold>//GEN-END:initComponents
 
     private void botaoMacacoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoMacacoButtonActionPerformed
-        //macaco
-        int valor = 3;
-        if (!macaco && !floresta && avaliarSelecionado(valor)){
-            macaco = true;
-            floresta = true;
-            verificar_estado();
-        } 
-        verifica_fase();
+        verifica_fase(botaoMacacoButton);
     }//GEN-LAST:event_botaoMacacoButtonActionPerformed
 
     private void botaoLeaoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoLeaoButtonActionPerformed
-        //leao
-        int valor = 2;
-        if (!leao && !selva && avaliarSelecionado(valor)){
-            leao = true;
-            selva = true;
-            verificar_estado();
-        }  
-        verifica_fase();
+        verifica_fase(botaoLeaoButton);
     }//GEN-LAST:event_botaoLeaoButtonActionPerformed
 
     private void botaoSelvaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoSelvaButtonActionPerformed
-        //selva
-        int valor = 6;
-        if (!leao && !selva && avaliarSelecionado(valor)){
-            leao = true;
-            selva = true;
-            verificar_estado();
-        }   
-        verifica_fase();
+        verifica_fase(botaoSelvaButton);
     }//GEN-LAST:event_botaoSelvaButtonActionPerformed
 
     private void botaoPeixeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoPeixeButtonActionPerformed
-        //peixe
-        int valor = 0;
-        if (!peixe && !mar && avaliarSelecionado(valor)){
-            peixe = true;
-            mar = true;
-            verificar_estado();       
-        }    
-        verifica_fase();
+        verifica_fase(botaoPeixeButton);
     }//GEN-LAST:event_botaoPeixeButtonActionPerformed
 
     private void botaoColmeiaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoColmeiaButtonActionPerformed
-        //colmeia
-        int valor = 5;
-        if (!colmeia && !abelha && avaliarSelecionado(valor)){
-            colmeia = true;
-            abelha = true;
-            verificar_estado(); 
-        }  
-        verifica_fase();
+         verifica_fase(botaoColmeiaButton);
     }//GEN-LAST:event_botaoColmeiaButtonActionPerformed
 
     private void botaoFlorestaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoFlorestaButtonActionPerformed
-        //floresta
-        int valor = 7;
-        if (!macaco && !floresta && avaliarSelecionado(valor)){
-            macaco = true;
-            floresta = true;
-            verificar_estado();
-        }  
-        verifica_fase();
+        verifica_fase(botaoFlorestaButton);
     }//GEN-LAST:event_botaoFlorestaButtonActionPerformed
 
     private void botaoMarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoMarButtonActionPerformed
-        //mar
-        int valor = 4;
-        if (!peixe && !mar && avaliarSelecionado(valor)){
-            peixe = true;
-            mar = true;
-            verificar_estado(); 
-        } 
-        verifica_fase();
+        verifica_fase(botaoMarButton);
     }//GEN-LAST:event_botaoMarButtonActionPerformed
 
     private void botaoAbelhaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoAbelhaButtonActionPerformed
-        //abelha
-        int valor = 1;
-        if (!colmeia && !abelha && avaliarSelecionado(valor)){
-            colmeia = true;
-            abelha = true;
-            verificar_estado();
-        }
-        verifica_fase();
+        verifica_fase(botaoAbelhaButton);
     }//GEN-LAST:event_botaoAbelhaButtonActionPerformed
 
     /**
