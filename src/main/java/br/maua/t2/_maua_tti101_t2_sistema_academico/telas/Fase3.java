@@ -151,6 +151,8 @@ public class Fase3 extends javax.swing.JFrame{
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(610, 480));
+        setResizable(false);
         getContentPane().setLayout(null);
 
         botaoMacacoButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/macaco.png"))); // NOI18N

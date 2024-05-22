@@ -43,6 +43,8 @@ public class CadastroTurmaTela extends javax.swing.JFrame {
         jTextField2.setText("jTextField2");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(610, 480));
+        setResizable(false);
         getContentPane().setLayout(null);
 
         okButton.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N

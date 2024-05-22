@@ -98,6 +98,8 @@ public void populateTable(JTable table) throws Exception {
         pesquisarButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(610, 480));
+        setResizable(false);
 
         tabelaDoProfessor.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {

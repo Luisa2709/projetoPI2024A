@@ -36,16 +36,14 @@ public class LoginTela extends javax.swing.JFrame {
         convidadoButton = new javax.swing.JButton();
         okButton = new javax.swing.JButton();
         cadastrarButton = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        fundo = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("LoginTela");
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBounds(new java.awt.Rectangle(0, 0, 0, 0));
-        setSize(new java.awt.Dimension(600, 450));
+        setMinimumSize(new java.awt.Dimension(610, 480));
+        setResizable(false);
+        setSize(new java.awt.Dimension(610, 480));
         getContentPane().setLayout(null);
 
         digiteSeuLoginButton.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1), "Digite seu Login:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 12))); // NOI18N
@@ -96,17 +94,11 @@ public class LoginTela extends javax.swing.JFrame {
         });
         getContentPane().add(cadastrarButton);
         cadastrarButton.setBounds(20, 300, 260, 80);
-        getContentPane().add(jLabel4);
-        jLabel4.setBounds(440, 260, 300, 210);
-        getContentPane().add(jLabel5);
-        jLabel5.setBounds(70, -80, 300, 210);
-        getContentPane().add(jLabel7);
-        jLabel7.setBounds(-20, -40, 270, 200);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/tela azul.jpg"))); // NOI18N
-        jLabel1.setName(""); // NOI18N
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(0, 0, 610, 460);
+        fundo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/tela azul.jpg"))); // NOI18N
+        fundo.setName(""); // NOI18N
+        getContentPane().add(fundo);
+        fundo.setBounds(0, 0, 610, 460);
         getContentPane().add(jPanel1);
         jPanel1.setBounds(410, 190, 10, 10);
 
@@ -220,10 +212,7 @@ public class LoginTela extends javax.swing.JFrame {
     private javax.swing.JButton convidadoButton;
     private javax.swing.JTextField digiteSeuLoginButton;
     private javax.swing.JPasswordField digiteSuaSenhaButton;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel fundo;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton okButton;
     // End of variables declaration//GEN-END:variables

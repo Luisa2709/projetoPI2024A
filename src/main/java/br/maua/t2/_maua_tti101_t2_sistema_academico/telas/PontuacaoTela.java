@@ -44,6 +44,8 @@ public class PontuacaoTela extends javax.swing.JFrame {
         jLabel3.setText("jLabel3");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(610, 480));
+        setResizable(false);
         getContentPane().setLayout(null);
 
         fimButton.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N

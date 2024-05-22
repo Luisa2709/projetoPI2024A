@@ -153,6 +153,8 @@ public class Fase1 extends javax.swing.JFrame {
         Fundo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(610, 480));
+        setResizable(false);
         getContentPane().setLayout(null);
 
         botãoVermelhoButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/vermelho.png"))); // NOI18N
