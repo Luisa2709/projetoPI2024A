@@ -4,6 +4,8 @@
  */
 package br.maua.t2._maua_tti101_t2_sistema_academico.telas;
 
+import br.maua.t2._maua_tti101_t2_sistema_academico.modelo.Usuario;
+
 
 /**
  *
@@ -32,10 +34,10 @@ public class PontuacaoTela extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         fimButton = new javax.swing.JButton();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        pontuaçãoUsuário = new javax.swing.JLabel();
+        imagemCrianças = new javax.swing.JLabel();
+        parabéns = new javax.swing.JLabel();
+        fundo = new javax.swing.JLabel();
 
         jLabel1.setText("jLabel1");
 
@@ -54,21 +56,22 @@ public class PontuacaoTela extends javax.swing.JFrame {
         getContentPane().add(fimButton);
         fimButton.setBounds(250, 350, 130, 70);
 
-        jLabel7.setText("jLabel7");
-        getContentPane().add(jLabel7);
-        jLabel7.setBounds(300, 280, 37, 16);
+        pontuaçãoUsuário.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        pontuaçãoUsuário.setText(String.valueOf(Usuario.pontuacao));
+        getContentPane().add(pontuaçãoUsuário);
+        pontuaçãoUsuário.setBounds(290, 280, 110, 16);
 
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/criancas novas.png"))); // NOI18N
-        getContentPane().add(jLabel6);
-        jLabel6.setBounds(210, 140, 230, 110);
+        imagemCrianças.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/criancas novas.png"))); // NOI18N
+        getContentPane().add(imagemCrianças);
+        imagemCrianças.setBounds(210, 140, 230, 110);
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/parabens.png"))); // NOI18N
-        getContentPane().add(jLabel4);
-        jLabel4.setBounds(110, 20, 420, 150);
+        parabéns.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/parabens.png"))); // NOI18N
+        getContentPane().add(parabéns);
+        parabéns.setBounds(110, 20, 420, 150);
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/tela azul.jpg"))); // NOI18N
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(-10, 0, 610, 460);
+        fundo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/tela azul.jpg"))); // NOI18N
+        getContentPane().add(fundo);
+        fundo.setBounds(-10, 0, 610, 460);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -114,11 +117,11 @@ public class PontuacaoTela extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton fimButton;
+    private javax.swing.JLabel fundo;
+    private javax.swing.JLabel imagemCrianças;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel parabéns;
+    private javax.swing.JLabel pontuaçãoUsuário;
     // End of variables declaration//GEN-END:variables
 }
