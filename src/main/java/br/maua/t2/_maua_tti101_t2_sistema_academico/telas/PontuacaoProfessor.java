@@ -4,10 +4,15 @@
  */
 package br.maua.t2._maua_tti101_t2_sistema_academico.telas;
 import br.maua.t2._maua_tti101_t2_sistema_academico.db.UsuarioDAO;
+import br.maua.t2._maua_tti101_t2_sistema_academico.db.ConnectionFactory;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JTable;
-
+import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -15,6 +20,54 @@ import javax.swing.JTable;
  */
 public class PontuacaoProfessor extends javax.swing.JFrame {
 
+    // Method to fetch data from the database
+private List<Object[]> fetchData() throws Exception {
+    List<Object[]> data = new ArrayList<>();
+    
+    // SQL query to fetch data
+    String sql = "SELECT u.NOME, p.PONTUACAO, p.DIA_HORARIO FROM PONTUACAO p JOIN USUARIOS u ON p.ID_USUARIO = u.ID_USUARIO";
+    
+    // Establish a connection with the database
+    Connection conexao = new ConnectionFactory().obterConexao();
+    PreparedStatement ps = conexao.prepareStatement(sql);
+    ResultSet rs = ps.executeQuery();
+    
+    // Fetch the data
+    while (rs.next()) {
+        String nome = rs.getString("NOME");
+        int pontuacao = rs.getInt("PONTUACAO");
+        Timestamp dataHora = rs.getTimestamp("DIA_HORARIO");
+        data.add(new Object[]{nome, pontuacao, dataHora});
+    }
+    
+    // Close the connection
+    rs.close();
+    ps.close();
+    conexao.close();
+    
+    return data;
+}
+
+// Method to populate the JTable
+public void populateTable(JTable table) throws Exception {
+    // Fetch data
+    List<Object[]> data = fetchData();
+    
+    // Column names
+    String[] columnNames = {"Nome", "Pontuação", "Data/Hora"};
+    
+    // Create table model
+    DefaultTableModel model = new DefaultTableModel(columnNames, 0);
+    
+    // Add rows to the table model
+    for (Object[] row : data) {
+        model.addRow(row);
+    }
+    
+    // Set the model to the table
+    table.setModel(model);
+}
+    
     /**
      * Creates new form PontuacaoProfessor
      * @throws java.lang.Exception
@@ -23,10 +76,10 @@ public class PontuacaoProfessor extends javax.swing.JFrame {
         initComponents();
         var dao = new UsuarioDAO();
         String[] turmas = dao.getTurmas();
-        
         for ( String turma: turmas){
             escolherSalasButton.addItem(turma);
         }
+        populateTable(tabelaDoProfessor);
     }
 
     /**
@@ -41,10 +94,12 @@ public class PontuacaoProfessor extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         tabelaDoProfessor = new javax.swing.JTable();
         escolherSalasButton = new javax.swing.JComboBox<>();
-        jLabel1 = new javax.swing.JLabel();
+        TurmaLabel = new javax.swing.JLabel();
         pesquisarButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(610, 480));
+        setResizable(false);
 
         tabelaDoProfessor.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -65,8 +120,8 @@ public class PontuacaoProfessor extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel1.setText("Turmas:");
+        TurmaLabel.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        TurmaLabel.setText("Turmas:");
 
         pesquisarButton.setText("Pesquisar");
         pesquisarButton.addActionListener(new java.awt.event.ActionListener() {
@@ -82,7 +137,7 @@ public class PontuacaoProfessor extends javax.swing.JFrame {
             .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(TurmaLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(escolherSalasButton, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -94,7 +149,7 @@ public class PontuacaoProfessor extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(escolherSalasButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1)
+                    .addComponent(TurmaLabel)
                     .addComponent(pesquisarButton))
                 .addGap(3, 3, 3)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 268, Short.MAX_VALUE)
@@ -109,29 +164,29 @@ public class PontuacaoProfessor extends javax.swing.JFrame {
     }//GEN-LAST:event_escolherSalasButtonActionPerformed
 
     private void pesquisarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pesquisarButtonActionPerformed
-        // pegou o vaklor selecionado na combobox
-        String turma = escolherSalasButton.getSelectedItem().toString();
+    // Get the selected value from the combo box
+    String turma = escolherSalasButton.getSelectedItem().toString();
 
-        if (!"".equals(turma)){
-            try {
-                var dao = new UsuarioDAO();
-                String[][] dadosTabela = dao.buscarTurma(turma);               
-                for (int i = 0; i < dadosTabela.length; i++){
-                    for (int j = 0; j < 3; i++){
-                        tabelaDoProfessor.setValueAt(dadosTabela[i][j], i, j);
-                        
-                    }
-                }
-                
-                System.out.print(dadosTabela);
-            } catch (Exception ex) {
-                Logger.getLogger(PontuacaoProfessor.class.getName()).log(Level.SEVERE, null, ex);
+    if (!"".equals(turma)) {
+        try {
+            var dao = new UsuarioDAO();
+            // Assuming buscarTurma method returns a List<Object[]> containing data
+            String[][] data = dao.buscarTurma(turma);
+
+            // Clear existing table data
+            DefaultTableModel model = (DefaultTableModel) tabelaDoProfessor.getModel();
+            model.setRowCount(0);
+
+            // Add fetched data to the table
+            for (Object[] row : data) {
+                model.addRow(row);
             }
-        } else {
-            
+        } catch (Exception ex) {
+            Logger.getLogger(PontuacaoProfessor.class.getName()).log(Level.SEVERE, null, ex);
         }
-        // buscar/atualizar
-        
+    } else {
+        // Handle empty selection
+    }
     }//GEN-LAST:event_pesquisarButtonActionPerformed
 
     /**
@@ -174,8 +229,8 @@ public class PontuacaoProfessor extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel TurmaLabel;
     private javax.swing.JComboBox<String> escolherSalasButton;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton pesquisarButton;
     private javax.swing.JTable tabelaDoProfessor;

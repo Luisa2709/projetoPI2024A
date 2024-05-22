@@ -5,8 +5,11 @@
  */
 package br.maua.t2._maua_tti101_t2_sistema_academico.telas;
 
+import br.maua.t2._maua_tti101_t2_sistema_academico.db.UsuarioDAO;
 import br.maua.t2._maua_tti101_t2_sistema_academico.modelo.Usuario;
 import java.awt.Color;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.BorderFactory;
 import javax.swing.JToggleButton;
 
@@ -104,7 +107,14 @@ public class Fase4 extends javax.swing.JFrame {
                     new Fase3().setVisible(true);
                     this.dispose();
                 } else {
-                    //TODO: Lançar pontuação no Banco
+                    var usuario = new Usuario();
+                    usuario.setLogin(Usuario.login);
+                    var dao = new UsuarioDAO();
+                    try {
+                        dao.pontuar(usuario);
+                    } catch (Exception ex) {
+                        Logger.getLogger(Fase1.class.getName()).log(Level.SEVERE, null, ex);
+                    }
                     new PontuacaoTela().setVisible(true);
                     this.dispose();
                 }
@@ -142,7 +152,6 @@ public class Fase4 extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setBackground(new java.awt.Color(255, 255, 255));
         setMinimumSize(new java.awt.Dimension(610, 480));
         setResizable(false);
         getContentPane().setLayout(null);

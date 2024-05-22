@@ -54,6 +54,64 @@ public class UsuarioDAO {
         ps.close();
         conexao.close();  
     }
+private int getUsuarioID(Usuario u) throws Exception {
+    // Specify the SQL command
+    String sql = "SELECT ID_USUARIO FROM USUARIOS WHERE NOME LIKE ?";
+    System.out.println(u.getLogin());
+
+    // Establish a connection with the database
+    Connection conexao = new ConnectionFactory().obterConexao();
+
+    // Prepare the command
+    PreparedStatement ps = conexao.prepareStatement(sql);
+    
+    // Replace the placeholders
+    ps.setString(1, u.getLogin());
+
+    // Execute the query
+    ResultSet rs = ps.executeQuery();
+
+    // Handle the result
+    int ID = -1;
+    if (rs.next()) {
+        ID = rs.getInt("ID_USUARIO");
+    } else {
+        throw new Exception("Usuario não encontrado: " + u.getLogin());
+    }
+
+    // Close the connection
+    rs.close();
+    ps.close();
+    conexao.close();
+
+    // Return the user ID
+    return ID;
+}
+
+public void pontuar(Usuario u) throws Exception {
+    // Retrieve the user ID
+    int ID = getUsuarioID(u);
+
+    // Specify the SQL command
+    String sql = "INSERT INTO PONTUACAO (PONTUACAO, ID_USUARIO) VALUES (?, ?)";
+
+    // Establish a connection with the database
+    Connection conexao = new ConnectionFactory().obterConexao();
+
+    // Prepare the command
+    PreparedStatement ps = conexao.prepareStatement(sql);
+    
+    // Replace the placeholders
+    ps.setInt(1, Usuario.pontuacao);  // Assuming u.getPontuacao() returns the user's score
+    ps.setInt(2, ID);
+
+    // Execute the update
+    ps.executeUpdate();
+
+    // Close the connection
+    ps.close();
+    conexao.close();
+}
     public boolean verificaProfessor(Usuario u){//verifica se eh professor
         return u.getLogin().contains("PROFESSOR");
     }
