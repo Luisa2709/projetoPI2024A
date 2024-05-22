@@ -79,7 +79,8 @@ public class PontuacaoTela extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void fimButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fimButtonActionPerformed
-        // TODO add your handling code here:
+        new LoginTela().setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_fimButtonActionPerformed
 
     /**
