@@ -110,7 +110,11 @@ public class LoginTela extends javax.swing.JFrame {
     }//GEN-LAST:event_digiteSeuLoginButtonActionPerformed
 
     private void okButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okButtonActionPerformed
-        
+        Usuario.Fase1 = false;
+        Usuario.Fase2 = false;
+        Usuario.Fase3 = false;
+        Usuario.Fase4 = false;
+        Usuario.pontuacao = 1000;
       try{
         //1. pegar o login digitado pelo usuario
         var login = digiteSeuLoginButton.getText();
@@ -156,6 +160,12 @@ public class LoginTela extends javax.swing.JFrame {
     }//GEN-LAST:event_okButtonActionPerformed
 
     private void convidadoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_convidadoButtonActionPerformed
+        Usuario.pontuacao = 1000;
+        Usuario.Fase1 = false;
+        Usuario.Fase2 = false;
+        Usuario.Fase3 = false;
+        Usuario.Fase4 = false;
+        Usuario.login = "Convidado";
         dispose();
         new TelaFasess().setVisible(true);
         

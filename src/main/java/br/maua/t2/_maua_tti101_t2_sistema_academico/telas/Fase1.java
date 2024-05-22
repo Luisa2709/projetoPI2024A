@@ -109,6 +109,7 @@ public class Fase1 extends javax.swing.JFrame {
                 } else {
                     var usuario = new Usuario();
                     usuario.setLogin(Usuario.login);
+                    usuario.setSenha(Usuario.senha);
                     var dao = new UsuarioDAO();
                     try {
                         dao.pontuar(usuario);
@@ -217,15 +218,20 @@ public class Fase1 extends javax.swing.JFrame {
         getContentPane().add(botãoMorangoButton);
         botãoMorangoButton.setBounds(170, 220, 129, 122);
 
+        botãoNuvemButton.setForeground(new java.awt.Color(255, 255, 255));
         botãoNuvemButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/nuvem.png"))); // NOI18N
         botãoNuvemButton.setText("jToggleButton1");
+        botãoNuvemButton.setBorder(javax.swing.BorderFactory.createCompoundBorder());
+        botãoNuvemButton.setBorderPainted(false);
+        botãoNuvemButton.setContentAreaFilled(false);
+        botãoNuvemButton.setMargin(new java.awt.Insets(0, 0, 0, 0));
         botãoNuvemButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botãoNuvemButtonActionPerformed(evt);
             }
         });
         getContentPane().add(botãoNuvemButton);
-        botãoNuvemButton.setBounds(310, 220, 129, 122);
+        botãoNuvemButton.setBounds(310, 220, 129, 120);
 
         botãoBananaButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/banana.png"))); // NOI18N
         botãoBananaButton.setText("jToggleButton1");

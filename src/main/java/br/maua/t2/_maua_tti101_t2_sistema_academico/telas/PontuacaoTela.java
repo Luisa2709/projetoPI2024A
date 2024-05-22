@@ -58,10 +58,10 @@ public class PontuacaoTela extends javax.swing.JFrame {
         getContentPane().add(fimButton);
         fimButton.setBounds(250, 350, 130, 70);
 
-        pontuaçãoUsuário.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        pontuaçãoUsuário.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         pontuaçãoUsuário.setText(String.valueOf(Usuario.pontuacao));
         getContentPane().add(pontuaçãoUsuário);
-        pontuaçãoUsuário.setBounds(290, 280, 110, 16);
+        pontuaçãoUsuário.setBounds(270, 280, 130, 30);
 
         imagemCrianças.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/criancas novas.png"))); // NOI18N
         getContentPane().add(imagemCrianças);

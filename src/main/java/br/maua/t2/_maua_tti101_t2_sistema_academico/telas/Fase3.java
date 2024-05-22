@@ -108,6 +108,7 @@ public class Fase3 extends javax.swing.JFrame{
                 } else {
                     var usuario = new Usuario();
                     usuario.setLogin(Usuario.login);
+                    usuario.setSenha(Usuario.senha);
                     var dao = new UsuarioDAO();
                     try {
                         dao.pontuar(usuario);

@@ -56,7 +56,7 @@ public class UsuarioDAO {
     }
 private int getUsuarioID(Usuario u) throws Exception {
     // Specify the SQL command
-    String sql = "SELECT ID_USUARIO FROM USUARIOS WHERE NOME LIKE ?";
+    String sql = "SELECT ID_USUARIO FROM USUARIOS WHERE NOME LIKE ? AND SENHA LIKE ?";
     System.out.println(u.getLogin());
 
     // Establish a connection with the database
@@ -67,6 +67,7 @@ private int getUsuarioID(Usuario u) throws Exception {
     
     // Replace the placeholders
     ps.setString(1, u.getLogin());
+    ps.setString(2, u.getSenha());
 
     // Execute the query
     ResultSet rs = ps.executeQuery();
@@ -90,8 +91,11 @@ private int getUsuarioID(Usuario u) throws Exception {
 
 public void pontuar(Usuario u) throws Exception {
     // Retrieve the user ID
-    int ID = getUsuarioID(u);
+    if (u.login.equals("Convidado")){
+        return;
+    }
 
+    int ID = getUsuarioID(u);
     // Specify the SQL command
     String sql = "INSERT INTO PONTUACAO (PONTUACAO, ID_USUARIO) VALUES (?, ?)";
 

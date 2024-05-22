@@ -10,7 +10,7 @@ package br.maua.t2._maua_tti101_t2_sistema_academico.modelo;
  */
 public class Usuario {
     public static String login;
-    private static String senha;
+    public static String senha;
     private static boolean professor;
     public static int pontuacao = 1000;
     public static boolean Fase1 = false;
